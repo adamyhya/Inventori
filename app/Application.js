@@ -16,7 +16,12 @@ Ext.define('Inventori.Application', {
     },
 
     stores: [
-        // TODO: add global / shared stores here
+       'Inventori.store.Lisbarang',
+        'Inventori.store.Lisjurusan',
+        'Inventori.store.Liskategori',
+        'Inventori.store.Liskeluar',
+        'Inventori.store.Lismasuk',
+        'Inventori.store.Lissatuan'
     ],
 
     launch: function () {
