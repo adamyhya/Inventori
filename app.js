@@ -19,7 +19,19 @@ Ext.application({
         'Inventori.view.main.Lmasuk',
         'Inventori.view.main.Ljurusan',
         'Inventori.view.main.Tabbarubarang',
-        'Inventori.view.main.Tabbarulain'        
+        'Inventori.view.main.Tabbarulain',
+        'Ext.data.Store',     
+        'Ext.form.Panel',
+        'Ext.grid.Grid',   
+        'Ext.tab.Panel',
+        'Ext.app.ViewController',
+        'Ext.app.ViewModel',
+        'Inventori.store.Lisbarang',
+        'Inventori.store.Lisjurusan',
+        'Inventori.store.Liskategori',
+        'Inventori.store.Liskeluar',
+        'Inventori.store.Lismasuk',
+        'Inventori.store.Lissatuan'        
 
     ],
 
