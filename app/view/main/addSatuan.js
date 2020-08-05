@@ -4,7 +4,7 @@
  *
  * See this in action at http://dev.sencha.com/deploy/sencha-touch-2-b3/examples/kitchensink/index.html#demo/forms
  */
-Ext.define('Inventori.view.main.barang.addSatuan', {
+Ext.define('Inventori.view.main.addSatuan', {
     extend: 'Ext.form.Panel',
     xtype: 'Tbhsatuan',
     requires: [

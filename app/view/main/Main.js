@@ -18,14 +18,17 @@ Ext.define('Inventori.view.main.Main', {
         'Inventori.view.main.Lkeluar',
         'Inventori.view.main.Lmasuk',
         'Inventori.view.main.Ljurusan',
+        'Inventori.view.main.Luser',
         'Inventori.view.main.Tabbarubarang',
         'Inventori.view.main.Tabbarulain',
+        'Inventori.view.main.Tabbarusett',    
         'Inventori.store.Lisbarang',
         'Inventori.store.Lisjurusan',
         'Inventori.store.Liskategori',
         'Inventori.store.Liskeluar',
         'Inventori.store.Lismasuk',
         'Inventori.store.Lissatuan',
+        'Inventori.store.Lisuser',
         'Ext.data.Store',     
         'Ext.form.Panel',
         'Ext.grid.Grid',   
@@ -73,9 +76,10 @@ Ext.define('Inventori.view.main.Main', {
         {
             title: 'Setting',
             iconCls: 'x-fa fa-cog',
-            bind: {
-                html: '{loremIpsum}'
-            }
+           layout: 'fit',
+            items: [{
+               xtype: 'tabbarusett'
+             }]
         }
     ]
 });

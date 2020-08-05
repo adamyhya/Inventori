@@ -4,9 +4,9 @@
  *
  * See this in action at http://dev.sencha.com/deploy/sencha-touch-2-b3/examples/kitchensink/index.html#demo/forms
  */
-Ext.define('Inventori.view.main.addkategori', {
+Ext.define('Inventori.view.main.addUser', {
     extend: 'Ext.form.Panel',
-    xtype: 'Tbhkategori',
+    xtype: 'Tbhuser',
     requires: [
         'Ext.form.FieldSet',
         'Ext.field.Number',
@@ -20,17 +20,16 @@ Ext.define('Inventori.view.main.addkategori', {
         'Ext.field.Radio',
         'Inventori.view.main.MainController',
         'Inventori.view.main.MainModel'
-
     ],
       controller: 'main',
     viewModel: 'main',
     shadow: true,
     cls: 'demo-solid-background',
-    id: 'tkategorifrm',
+    id: 'tuserfrm',
     items:[{
             xtype: 'fieldset',
-            id: 'fieldset4',
-            title: 'Tambah Kategori',
+            id: 'fieldset7',
+            title: 'Tambah Pengguna',
 
             default:{
                 labelWidth: '35%'
@@ -38,10 +37,51 @@ Ext.define('Inventori.view.main.addkategori', {
             items: [
                 {
                     xtype: 'textfield',
-                    name: 'namaka',
-                    label: 'Nama Kategori',
-                    placeHolder: 'Nama Kategori',
+                    name: 'uname',
+                    label: 'Username',
+                    placeHolder: 'Username',
+                    required: true,
+                    clearIcon: true
+                },
+                {
+                    xtype: 'passwordfield',
+                    revealable: true,
+                    name : 'pwd',
+                    label: 'Password',
+                    required: true,
+                    clearIcon: true
+                },
+                {
+                    xtype: 'textfield',
+                    name: 'namaus',
+                    label: 'Nama',
+                    placeHolder: 'Nama',
                     autoCapitalize: true,
+                    required: true,
+                    clearIcon: true
+                },
+                {
+                    xtype: 'selectfield',
+                    name: 'akses',
+                    label: 'Hak Akses',
+                    placeHolder: 'Pilih Hak Akses..',
+                    options: [
+                        {
+                            text: 'Admin',
+                            value: '1'
+                        },
+                        {
+                            text: 'Staff',
+                            value: '2'
+                        }
+                        
+                    ]
+                },
+                {
+                    xtype: 'textfield',
+                    name: 'kontak',
+                    label: 'Kontak',
+                    placeHolder: '0812XXXXXXXX',
                     required: true,
                     clearIcon: true
                 },
@@ -68,7 +108,7 @@ Ext.define('Inventori.view.main.addkategori', {
                         text: 'Reset',
                         ui: 'action',
                         handler: function(){
-                        Ext.getCmp('tmasukfrm').reset();
+                        Ext.getCmp('tuserfrm').reset();
                     }
                     }
                     ]

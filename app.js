@@ -18,8 +18,10 @@ Ext.application({
         'Inventori.view.main.Lkeluar',
         'Inventori.view.main.Lmasuk',
         'Inventori.view.main.Ljurusan',
+        'Inventori.view.main.Luser',
         'Inventori.view.main.Tabbarubarang',
         'Inventori.view.main.Tabbarulain',
+        'Inventori.view.main.Tabbarusett',
         'Ext.data.Store',     
         'Ext.form.Panel',
         'Ext.grid.Grid',   
@@ -31,8 +33,8 @@ Ext.application({
         'Inventori.store.Liskategori',
         'Inventori.store.Liskeluar',
         'Inventori.store.Lismasuk',
-        'Inventori.store.Lissatuan'        
-
+        'Inventori.store.Lissatuan',
+        'Inventori.store.Lisuser'
     ],
 
     // The name of the initial view to create. With the classic toolkit this class
