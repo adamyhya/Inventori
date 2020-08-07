@@ -1,5 +1,6 @@
 Ext.define('Inventori.store.Liskeluar', {
     extend: 'Ext.data.Store',
+    storeId: 'liskeluar',
     alias: 'store.liskeluar',
     autoLoad: true,
     autoSync: true,
@@ -11,7 +12,9 @@ Ext.define('Inventori.store.Liskeluar', {
     proxy: {
         type: 'jsonp',
         api: {
-            read: "http://localhost/inventaris/apikeluar.php"
+            read: "http://localhost/inventaris/apikeluar.php?action=1",
+            create: "http://localhost/inventaris/apikeluar.php?action=2",
+            destroy: "http://localhost/inventaris/apikeluar.php?action=3",
         },
         reader: {
             type: 'json',

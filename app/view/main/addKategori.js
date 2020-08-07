@@ -56,12 +56,9 @@ Ext.define('Inventori.view.main.addkategori', {
                     {
                         xtype: 'button',
                         text: 'OK',
-                        ui: 'action',
-                        scope: this,
-                        listeners:{
-                            tap: 'tambahB'
-                        }
-
+                        ui: 'confirm',
+                        handler : 'Simpankategori'
+                    
                     },
                     {
                         xtype: 'button',

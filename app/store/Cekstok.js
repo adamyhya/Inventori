@@ -1,22 +1,23 @@
-Ext.define('Inventori.store.Lissatuan', {
+Ext.define('Inventori.store.Cekstok', {
     extend: 'Ext.data.Store',
-    storeId: 'lissatuan',
-    alias: 'store.lissatuan',
+    storeId: 'cekstok',
+    alias: 'store.cekstok',
     autoLoad: true,
     autoSync: true,
     fields: [
-        'nomor', 'id_satuan', 'nama_satuan'
+        'id_barang', 'jumlah_barang'
     ],
 
 
     proxy: {
         type: 'jsonp',
         api: {
-            read: "http://localhost/inventaris/apisatuan.php"
+            read: "http://localhost/inventaris/apicekstok.php",
         },
         reader: {
             type: 'json',
             rootProperty: 'items'
+
         }
     }
 });

@@ -22,7 +22,7 @@ Ext.define('Inventori.view.main.barang.Tambahbarang', {
         'Inventori.view.main.MainModel'
 
     ],
-      controller: 'main',
+    controller: 'main',
     viewModel: 'main',
     shadow: true,
     cls: 'demo-solid-background',    
@@ -38,6 +38,7 @@ Ext.define('Inventori.view.main.barang.Tambahbarang', {
             items: [
                 {
                     xtype: 'textfield',
+                    id: 'namab',
                     name: 'namab',
                     label: 'Nama Barang',
                     placeHolder: 'Nama Barang',
@@ -47,58 +48,36 @@ Ext.define('Inventori.view.main.barang.Tambahbarang', {
                 },
                 {
                     xtype: 'selectfield',
-                    name: 'kategorib',
-                    label: 'Kategori Barang',
-                    placeHolder: 'Pilih Kategori..',
-                    options: [
-                        {
-                            text: 'ATK',
-                            value: 'master'
-                        },
-                        {
-                            text: 'Elektronik',
-                            value: 'journeyman'
-                        },
-                        {
-                            text: 'Percetakan',
-                            value: 'apprentice'
-                        }
-                        
-                    ]
-                    
-                    
-                    
+                    label: 'Nama Kategori',
+                    id: 'namak',
+                    name: 'namak',
+                    valueField: 'id_kategori',
+                    displayField: 'nama_kategori',
+                    bind: {
+                        store: 'liskategori'
+                    }                
                 },         
                 {
                     xtype: 'spinnerfield',
+                    id: 'jumlahb',
                     name: 'jumlahb',
                     label: 'Jumlah',
                     minValue: 0,
                     maxValue: 9999,
                     clearable: true,
                     stepValue: 1,
-                    cycle: true,
+                    cycle: true
                 },
                 {
                     xtype: 'selectfield',
-                    name: 'satuanb',
-                    label: 'Satuan',
-                    placeHolder: 'Pilih Satuan..',
-                    options: [
-                        
-                        {
-                            text: 'RIM',
-                            value: 'master'
-                        },
-                        {
-                            text: 'UNIT',
-                            value: 'journeyman'
-                        },
-                        {
-                            text: 'Buah',
-                            value: 'apprentice'
-                        }
-                    ]
+                    label: 'Nama Satuan',
+                    id: 'namas',
+                    name: 'namas',
+                    valueField: 'id_satuan',
+                    displayField: 'nama_satuan',
+                    bind: {
+                        store: 'lissatuan'
+                    }
                 },
                          
                 {
@@ -113,11 +92,7 @@ Ext.define('Inventori.view.main.barang.Tambahbarang', {
                         xtype: 'button',
                         text: 'OK',
                         ui: 'action',
-                        scope: this,
-                        listeners:{
-                            tap: 'tambahB'
-                        }
-
+                        handler: 'addBarang'
                     }
                     ,{
                         xtype: 'button',
@@ -125,7 +100,7 @@ Ext.define('Inventori.view.main.barang.Tambahbarang', {
                         ui: 'action',
                         handler: function(){
                         Ext.getCmp('tbarangfrm').reset();
-                    }
+                        }
 
                     }
                     

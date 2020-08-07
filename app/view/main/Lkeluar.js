@@ -43,8 +43,12 @@ extend: 'Ext.grid.Grid',
                     xtype: 'button',
                     iconCls: 'x-fa fa-trash-o',
                     ui: 'action',
-                    bind: '',
-                    handler: 'onVerifyTap'
+                    handler: function(btn) {
+                        record = btn.getParent();
+                        cell = record.getRecord();
+                        Ext.getStore('liskeluar').remove(cell);
+                        Ext.getStore('liskeluar').load();
+                    }
                 }
 
                  }

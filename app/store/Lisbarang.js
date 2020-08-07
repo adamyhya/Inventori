@@ -1,5 +1,6 @@
 Ext.define('Inventori.store.Lisbarang', {
     extend: 'Ext.data.Store',
+    storeId: 'lisbarang',
     alias: 'store.lisbarang',
     autoLoad: true,
     autoSync: true,
@@ -11,11 +12,15 @@ Ext.define('Inventori.store.Lisbarang', {
     proxy: {
         type: 'jsonp',
         api: {
-            read: "http://localhost/inventaris/apibarang.php"
+            read: "http://localhost/inventaris/apibarang.php?action=1",
+            create: "http://localhost/inventaris/apibarang.php?action=2",
+            destroy: "http://localhost/inventaris/apibarang.php?action=3",
+            
         },
         reader: {
             type: 'json',
             rootProperty: 'items'
+
         }
     }
 });

@@ -631,6 +631,7 @@ $include-ext-viewport-viewport: dynamic(true);;
 $include-ext-viewport-wp: dynamic(true);;
 $include-ext-viewport-windowsphone: dynamic(true);;
 $include-inventori-application: dynamic(true);;
+$include-inventori-store-cekstok: dynamic(true);;
 $include-inventori-store-lisbarang: dynamic(true);;
 $include-inventori-store-lisjurusan: dynamic(true);;
 $include-inventori-store-liskategori: dynamic(true);;

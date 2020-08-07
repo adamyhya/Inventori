@@ -43,8 +43,52 @@ Ext.define('Inventori.view.main.MainController', {
     },
 
     addBarang: function(){
-    this.getView().destroy();            
-    Ext.Viewport.add(Ext.create('Inventori.view.main.barang.Tambahbarang'));
+    id_kategori = Ext.getCmp('kategorib').getValue();
+    id_satuan = Ext.getCmp('satuanb').getValue();
+    nama_barang = Ext.getCmp('namab').getValue();
+    jumlah_barang = Ext.getCmp('jumlahb').getValue();
+    store = Ext.getStore('lisbarang');
+    store.beginUpdate();
+    store.insert(0, {'id_kategori':id_kategori, 'id_satuan':id_satuan, 'nama_barang': nama_barang, 'jumlah_barang':jumlah_barang});
+    store.endUpdate();
+    store.load();
+    alert("Inserting..");
+    Ext.getCmp('tbarangfrm').reset();
+    },
+    addMasuk: function(){
+    id_barang = Ext.getCmp('kategorib').getValue();
+    id_kategori = Ext.getCmp('namak').
+    id_satuan = Ext.getCmp('namas').getField()
+    nama_barang = Ext.getCmp('namab').getValue();
+    jumlah_barang = Ext.getCmp('jumlahb').getValue();
+    store = Ext.getStore('lisbarang');
+    store.beginUpdate();
+    store.insert(0, {'id_kategori':id_kategori, 'id_satuan':id_satuan, 'nama_barang': nama_barang, 'jumlah_barang':jumlah_barang});
+    store.endUpdate();
+    store.load();
+    alert("Inserting..");
+    Ext.getCmp('tbarangfrm').reset();
+    },
+    addBarang: function(){
+    id_kategori = Ext.getCmp('namak').getValue();
+    id_satuan = Ext.getCmp('namas').getValue();
+    nama_barang = Ext.getCmp('namab').getValue();
+    jumlah_barang = Ext.getCmp('jumlahb').getValue();
+    store = Ext.getStore('lisbarang');
+    store.beginUpdate();
+    store.insert(0, {'id_kategori':id_kategori, 'id_satuan':id_satuan, 'nama_barang': nama_barang, 'jumlah_barang':jumlah_barang});
+    store.endUpdate();
+    store.load();
+    alert("Inserting..");
+    Ext.getCmp('tbarangfrm').reset();
+    },
+    
+
+    delBarang: function() {
+        record = Ext.getCmp('lbarang').getSelection();
+        Ext.getStore('lisbarang').remove(record);
+        Ext.getStore('lisbarang').load();
+        alert("Inserting..");
     },
     
     onLoginClick: function() {

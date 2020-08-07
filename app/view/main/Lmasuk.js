@@ -19,8 +19,7 @@ extend: 'Ext.grid.Grid',
         { text: 'Satuan', dataIndex: 'nama_satuan', width: 120 },
         { text: 'Tanggal', dataIndex: 'tgl_masuk', width: 180 },
         { text: 'Jurusan', dataIndex: 'nama_jurusan', width: 120 },
-        { text: 'Admin', dataIndex: 'nama_user', width: 120 },
-        
+        { text: 'Admin', dataIndex: 'nama_user', width: 120 },    
         { text: 'Edit',
             width: 100,
             ignoreExport: true,
@@ -45,8 +44,12 @@ extend: 'Ext.grid.Grid',
                     xtype: 'button',
                     iconCls: 'x-fa fa-trash-o',
                     ui: 'action',
-                    bind: '',
-                    handler: 'onVerifyTap'
+                    handler: function(btn) {
+                        record = btn.getParent();
+                        cell = record.getRecord();
+                        Ext.getStore('lismasuk').remove(cell);
+                        Ext.getStore('lismasuk').load();
+                    }
                 }
 
                  }

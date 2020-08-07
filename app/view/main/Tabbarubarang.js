@@ -22,6 +22,7 @@ Ext.define('Inventori.view.main.Tabbarubarang', {
             iconCls: 'x-fa fa-cubes',
             layout: 'fit',
             items: [{
+               id: 'lbarang',
                xtype: 'baranglist'
              }],
             cls: 'card'

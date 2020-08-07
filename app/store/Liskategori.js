@@ -1,5 +1,6 @@
 Ext.define('Inventori.store.Liskategori', {
     extend: 'Ext.data.Store',
+    storeId: 'liskategori',
     alias: 'store.liskategori',
     autoLoad: true,
     autoSync: true,

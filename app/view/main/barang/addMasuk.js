@@ -4,8 +4,11 @@
  *
  * See this in action at http://dev.sencha.com/deploy/sencha-touch-2-b3/examples/kitchensink/index.html#demo/forms
  */
+
+
 Ext.define('Inventori.view.main.barang.addMasuk', {
     extend: 'Ext.form.Panel',
+   
     xtype: 'Tbhmasuk',
     requires: [
         'Ext.form.FieldSet',
@@ -19,7 +22,8 @@ Ext.define('Inventori.view.main.barang.addMasuk', {
         'Ext.field.Hidden',
         'Ext.field.Radio',
         'Inventori.view.main.MainController',
-        'Inventori.view.main.MainModel'
+        'Inventori.view.main.MainModel',
+        'Inventori.store.Lisbarang'
 
     ],
       controller: 'main',
@@ -37,18 +41,36 @@ Ext.define('Inventori.view.main.barang.addMasuk', {
             },
             items: [
                 {
+                    xtype: 'selectfield',
+                    id: 'namam',
+                    hiddenField: 'id_barang',
+                    displayField: 'nama_barang',
+                    valueField: 'jumlah_barang',
+                    bind: {
+                        store: 'lisbarang' //error
+                    },
+                    listeners:{
+                        change: function(){
+                        a = Ext.getCmp('namam').getValue();
+                        
+                        Ext.getCmp('stok').setValue(a);
+                        b = Ext.getCmp('stok').getValue();
+                            Ext.getCmp('jumlahb').setMaxValue(b);
+                        }
+                    }
+                },
+                {
                     xtype: 'textfield',
-                    name: 'namab',
-                    label: 'Nama Barang',
-                    placeHolder: 'Nama Barang',
-                    autoCapitalize: true,
-                    required: true,
-                    clearIcon: true
+                    label: 'STOK BARANG',
+                    id: 'stok',
+                    disabled: true
                 },
                 {
                     xtype: 'spinnerfield',
+                    id: 'jumlahb',
                     name: 'jumlahb',
                     label: 'Jumlah',
+                    ui: 'action',
                     minValue: 0,
                     maxValue: 9999,
                     clearable: true,
