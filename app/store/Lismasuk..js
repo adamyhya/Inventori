@@ -5,7 +5,7 @@ Ext.define('Inventori.store.Lismasuk', {
     autoLoad: true,
     autoSync: true,
     fields: [
-        'nomor', 'id_barang_masuk', 'nama_barang', 'nama_kategori', 'jumlah_barang_masuk', 'nama_satuan', 'tgl_masuk', 'nama_jurusan', 'nama_user', 'keterangan'
+        'nomor', 'id_barang_masuk', 'nama_barang', 'nama_kategori', 'jumlah_barang_masuk', 'nama_satuan', 'tgl_masuk', 'nama_jurusan', 'id_pengguna', 'keterangan'
     ],
 
 

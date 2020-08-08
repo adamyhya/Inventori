@@ -15,7 +15,7 @@ extend: 'Ext.grid.Grid',
         { text: 'No', dataIndex: 'nomor', width: 55 },
         { text: 'Nama Barang',  dataIndex: 'nama_barang', width: 230 },
         { text: 'Kategori', dataIndex: 'nama_kategori', width: 120 },
-        { text: 'Jumlah', dataIndex: 'jumlah_barang_masuk', width: 80 },
+        { text: 'Jumlah', dataIndex: 'jumlah_barang_masuk', width: 120 },
         { text: 'Satuan', dataIndex: 'nama_satuan', width: 120 },
         { text: 'Tanggal', dataIndex: 'tgl_masuk', width: 180 },
         { text: 'Jurusan', dataIndex: 'nama_jurusan', width: 120 },
@@ -49,6 +49,7 @@ extend: 'Ext.grid.Grid',
                         cell = record.getRecord();
                         Ext.getStore('lismasuk').remove(cell);
                         Ext.getStore('lismasuk').load();
+                        Ext.getStore('lisbarang').load();
                     }
                 }
 
@@ -98,8 +99,8 @@ extend: 'Ext.grid.Grid',
                             easing: 'ease-out'
                         },
                         centered: true,
-                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 600,
-                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 600,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 340 : 340,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 220,
                         styleHtmlContent: true,
                         scrollable: true
                     });

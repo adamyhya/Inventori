@@ -17,13 +17,13 @@ Ext.define('Inventori.Application', {
 
     stores: [
        'Inventori.store.Lisbarang',
+       'Inventori.store.Lisbarang1',
         'Inventori.store.Lisjurusan',
         'Inventori.store.Liskategori',
         'Inventori.store.Liskeluar',
         'Inventori.store.Lismasuk',
         'Inventori.store.Lissatuan',
-        'Inventori.store.Lisuser',
-        'Inventori.store.Cekstok'
+        'Inventori.store.Lisuser'
         
     ],
 

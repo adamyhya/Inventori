@@ -5,10 +5,10 @@
  * See this in action at http://dev.sencha.com/deploy/sencha-touch-2-b3/examples/kitchensink/index.html#demo/forms
  */
 
-
+var c = '';
+var d = '';
 Ext.define('Inventori.view.main.barang.addMasuk', {
     extend: 'Ext.form.Panel',
-   
     xtype: 'Tbhmasuk',
     requires: [
         'Ext.form.FieldSet',
@@ -23,59 +23,120 @@ Ext.define('Inventori.view.main.barang.addMasuk', {
         'Ext.field.Radio',
         'Inventori.view.main.MainController',
         'Inventori.view.main.MainModel',
-        'Inventori.store.Lisbarang'
-
+        'Inventori.store.Lisbarang',
+        'Inventori.store.Lisbarang1'
     ],
       controller: 'main',
     viewModel: 'main',
     shadow: true,
+
     cls: 'demo-solid-background',
     id: 'tmasukfrm',
     items:[{
             xtype: 'fieldset',
             id: 'fieldset2',
             title: 'Tambah Barang Masuk',
-
+            width: 300,
+            height: 400,
+            scrollable: true,
             default:{
                 labelWidth: '35%'
             },
             items: [
+
+                {
+                    xtype: 'textfield',
+                    id: 'id_barang',
+                    name: 'id_barang',
+                    hidden: true,
+                    bind: '{baranglis.selection.id_barang}'
+                },
+                {
+                    xtype: 'textfield',
+                    id: 'namam',
+                    name: 'namam',
+                    hidden: true,
+                    bind: '{baranglis.selection.nama_barang}'
+                },
                 {
                     xtype: 'selectfield',
-                    id: 'namam',
-                    hiddenField: 'id_barang',
-                    displayField: 'nama_barang',
-                    valueField: 'jumlah_barang',
-                    bind: {
-                        store: 'lisbarang' //error
-                    },
-                    listeners:{
+                    id: 'jurusanm',
+                    name: 'jurusanm',
+                    label: 'Nama Jurusan',
+                    displayField: 'nama_jurusan',
+                    valueField: 'id_jurusan',
+                    bind: { store: 'lisjurusan' }
+                },
+                {
+                    xtype: 'textfield',
+                    id: 'keterangan',
+                    name: 'keterangan',
+                    label: 'Keterangan',
+                    autoCapitalize: true,
+                    required: true,
+                    clearIcon: true
+                },
+                {
+                    xtype: 'textfield',
+                    id: 'cari',
+                    name: 'cari',
+                    label: 'Nama Barang',
+                    listeners: {
                         change: function(){
-                        a = Ext.getCmp('namam').getValue();
-                        
-                        Ext.getCmp('stok').setValue(a);
-                        b = Ext.getCmp('stok').getValue();
-                            Ext.getCmp('jumlahb').setMaxValue(b);
+                            caris = Ext.getCmp('cari').getValue();
+                            Ext.getStore('lisbarang1').filter('nama_barang' , caris);
+                            Ext.getCmp('jumlahm').setValue(0);
+                        }
+                    }   
+                },
+                {
+                    xtype: 'textfield',
+                    id: 'jml',
+                    name: 'jml',
+                    hidden: true,
+                    bind: '{baranglis.selection.jumlah_barang}',
+                    listeners: {
+                        change: function(){
+                        b = Ext.getCmp('jml').getValue();
+                        Ext.getCmp('jumlahm').setMaxValue(b);
+                        Ext.getCmp('jumlahm').setValue(0);
                         }
                     }
                 },
                 {
-                    xtype: 'textfield',
-                    label: 'STOK BARANG',
-                    id: 'stok',
-                    disabled: true
-                },
-                {
                     xtype: 'spinnerfield',
-                    id: 'jumlahb',
-                    name: 'jumlahb',
+                    id: 'jumlahm',
+                    name: 'jumlahm',
                     label: 'Jumlah',
                     ui: 'action',
                     minValue: 0,
-                    maxValue: 9999,
+                    maxValue: 0,
                     clearable: true,
                     stepValue: 1,
                     cycle: true,
+                    listeners: {
+                        change: function(){
+                           cek = Ext.getCmp('jumlahm').getValue();
+                           if(cek == 0){
+                            Ext.getCmp('ok').setDisabled(true);
+                           }
+                           else{
+                            Ext.getCmp('ok').setDisabled(false);
+                           }
+                        }
+                    }
+
+                },
+                {
+                    width: 280,
+                    height: 130,
+                    xtype: 'list',
+                    shadow: true,
+                    scrollable: true,
+                    reference: 'baranglis',
+                    store: 'lisbarang1',
+                    itemTpl: '{id_barang} : {nama_barang} -> {jumlah_barang}'
+                    
                 },
                 {
                     docked: 'bottom',
@@ -87,12 +148,12 @@ Ext.define('Inventori.view.main.barang.addMasuk', {
                     items:[
                     {
                         xtype: 'button',
+                        id: 'ok',
+                        name: 'ok',
                         text: 'OK',
+                        disabled: true,
                         ui: 'action',
-                        scope: this,
-                        listeners:{
-                            tap: 'tambahB'
-                        }
+                        handler: 'addMasuk'
 
                     },
                     {

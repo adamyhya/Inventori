@@ -43,33 +43,6 @@ Ext.define('Inventori.view.main.MainController', {
     },
 
     addBarang: function(){
-    id_kategori = Ext.getCmp('kategorib').getValue();
-    id_satuan = Ext.getCmp('satuanb').getValue();
-    nama_barang = Ext.getCmp('namab').getValue();
-    jumlah_barang = Ext.getCmp('jumlahb').getValue();
-    store = Ext.getStore('lisbarang');
-    store.beginUpdate();
-    store.insert(0, {'id_kategori':id_kategori, 'id_satuan':id_satuan, 'nama_barang': nama_barang, 'jumlah_barang':jumlah_barang});
-    store.endUpdate();
-    store.load();
-    alert("Inserting..");
-    Ext.getCmp('tbarangfrm').reset();
-    },
-    addMasuk: function(){
-    id_barang = Ext.getCmp('kategorib').getValue();
-    id_kategori = Ext.getCmp('namak').
-    id_satuan = Ext.getCmp('namas').getField()
-    nama_barang = Ext.getCmp('namab').getValue();
-    jumlah_barang = Ext.getCmp('jumlahb').getValue();
-    store = Ext.getStore('lisbarang');
-    store.beginUpdate();
-    store.insert(0, {'id_kategori':id_kategori, 'id_satuan':id_satuan, 'nama_barang': nama_barang, 'jumlah_barang':jumlah_barang});
-    store.endUpdate();
-    store.load();
-    alert("Inserting..");
-    Ext.getCmp('tbarangfrm').reset();
-    },
-    addBarang: function(){
     id_kategori = Ext.getCmp('namak').getValue();
     id_satuan = Ext.getCmp('namas').getValue();
     nama_barang = Ext.getCmp('namab').getValue();
@@ -82,7 +55,23 @@ Ext.define('Inventori.view.main.MainController', {
     alert("Inserting..");
     Ext.getCmp('tbarangfrm').reset();
     },
-    
+    addMasuk: function(){
+        id_barang = Ext.getCmp('id_barang').getValue();
+        nama_barang = Ext.getCmp('namam').getValue();
+        jumlah_barang = Ext.getCmp('jumlahm').getValue();
+        keterangan = Ext.getCmp('keterangan').getValue();
+        id_jurusan = Ext.getCmp('jurusanm').getValue();
+        id_pengguna = '1';
+        store = Ext.getStore('lismasuk');
+        store.beginUpdate();
+        store.insert(0, {'id_barang': id_barang , 'nama_barang': nama_barang, 'jumlah_barang_masuk': jumlah_barang, 'keterangan': keterangan, 'id_jurusan': id_jurusan, 'id_pengguna' : id_pengguna});
+        store.endUpdate();
+        store.load();
+        alert("Inserting..");
+        Ext.getStore('lisbarang1').clearFilter();
+        Ext.getStore('lisbarang').load();
+        
+    },    
 
     delBarang: function() {
         record = Ext.getCmp('lbarang').getSelection();
