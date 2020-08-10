@@ -12,7 +12,9 @@ Ext.define('Inventori.store.Lissatuan', {
     proxy: {
         type: 'jsonp',
         api: {
-            read: "http://localhost/inventaris/apisatuan.php"
+            read: "http://localhost/inventaris/apisatuan.php?action=1",
+            create: "http://localhost/inventaris/apisatuan.php?action=2",
+            destroy: "http://localhost/inventaris/apisatuan.php?action=3",
         },
         reader: {
             type: 'json',

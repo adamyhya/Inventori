@@ -13,7 +13,7 @@ extend: 'Ext.grid.Grid',
     columns: [
         { text: 'No', dataIndex: 'nomor', width: 55 },
         { text: '',  dataIndex: 'id_satuan', hidden:true },
-        { text: 'Nama Kategori', dataIndex: 'nama_satuan', width: 200 },
+        { text: 'Nama Satuan', dataIndex: 'nama_satuan', width: 200 },
         { text: 'Edit',
             width: 100,
             ignoreExport: true,
@@ -39,7 +39,12 @@ extend: 'Ext.grid.Grid',
                     iconCls: 'x-fa fa-trash-o',
                     ui: 'action',
                     bind: '',
-                    handler: 'onVerifyTap'
+                    handler: function(btn) {
+                        record = btn.getParent();
+                        cell = record.getRecord();
+                        Ext.getStore('lissatuan').remove(cell);
+                        Ext.getStore('lissatuan').load();
+                    }
                 }
 
                  }
@@ -52,14 +57,17 @@ extend: 'Ext.grid.Grid',
             xtype: 'toolbar',
             items: [
                 {
-                    xtype: 'textfield',
+                    xtype: 'searchfield',
                     placeHolder: 'Nama Satuan',
-                    name: 'namasat'
-                },
-                {
-                    xtype: 'button',
+                    id: 'namacarisa',
+                    name: 'namacarisa',
                     iconCls: 'x-fa fa-search',
-                    name: 'butsat'
+                    listeners: {
+                        change: function(){
+                            caris = Ext.getCmp('namacarisa').getValue();
+                            Ext.getStore('lissatuan').filter('nama_satuan' , caris);
+                        }
+                    }   
                 },
                 {
                     text: ''
@@ -100,9 +108,5 @@ extend: 'Ext.grid.Grid',
                 },
             ]
         }
-        ],
-
-    listeners: {
-        select: 'onItemSelected'
-    }
+        ]
 });

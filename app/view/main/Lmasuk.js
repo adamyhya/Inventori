@@ -63,14 +63,17 @@ extend: 'Ext.grid.Grid',
             xtype: 'toolbar',
             items: [
                 {
-                    xtype: 'textfield',
+                xtype: 'searchfield',
                     placeHolder: 'Nama Barang',
-                    name: 'namacar'
-                },
-                {
-                    xtype: 'button',
+                    id: 'namacari1',
+                    name: 'namacari1',
                     iconCls: 'x-fa fa-search',
-                    name: 'namacar'
+                    listeners: {
+                        change: function(){
+                            caris = Ext.getCmp('namacari1').getValue();
+                            Ext.getStore('lismasuk').filter('nama_barang' , caris);
+                        }
+                    }   
                 },
                 {
                     text: ''
@@ -111,9 +114,5 @@ extend: 'Ext.grid.Grid',
                 },
             ]
         }
-        ],
-
-    listeners: {
-        select: 'onItemSelected'
-    }
+        ]
 });

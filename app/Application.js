@@ -18,6 +18,7 @@ Ext.define('Inventori.Application', {
     stores: [
        'Inventori.store.Lisbarang',
        'Inventori.store.Lisbarang1',
+       'Inventori.store.Lisbarang2',
         'Inventori.store.Lisjurusan',
         'Inventori.store.Liskategori',
         'Inventori.store.Liskeluar',

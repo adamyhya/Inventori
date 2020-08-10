@@ -38,6 +38,7 @@ Ext.define('Inventori.view.main.addkategori', {
             items: [
                 {
                     xtype: 'textfield',
+                    id: 'namaka',
                     name: 'namaka',
                     label: 'Nama Kategori',
                     placeHolder: 'Nama Kategori',
@@ -56,8 +57,8 @@ Ext.define('Inventori.view.main.addkategori', {
                     {
                         xtype: 'button',
                         text: 'OK',
-                        ui: 'confirm',
-                        handler : 'Simpankategori'
+                        ui: 'action',
+                        handler : 'addKategori'
                     
                     },
                     {

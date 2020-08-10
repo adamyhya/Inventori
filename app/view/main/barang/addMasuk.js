@@ -56,7 +56,12 @@ Ext.define('Inventori.view.main.barang.addMasuk', {
                     id: 'namam',
                     name: 'namam',
                     hidden: true,
-                    bind: '{baranglis.selection.nama_barang}'
+                    bind: '{baranglis.selection.nama_barang}',
+                    listeners:{
+                        change: function(){
+                            Ext.getCmp('cari').setPlaceHolder(Ext.getCmp('namam').getValue());
+                        }
+                    }
                 },
                 {
                     xtype: 'selectfield',
@@ -84,8 +89,7 @@ Ext.define('Inventori.view.main.barang.addMasuk', {
                     listeners: {
                         change: function(){
                             caris = Ext.getCmp('cari').getValue();
-                            Ext.getStore('lisbarang1').filter('nama_barang' , caris);
-                            Ext.getCmp('jumlahm').setValue(0);
+                            Ext.getStore('lisbarang2').filter('nama_barang' , caris);
                         }
                     }   
                 },
@@ -98,8 +102,7 @@ Ext.define('Inventori.view.main.barang.addMasuk', {
                     listeners: {
                         change: function(){
                         b = Ext.getCmp('jml').getValue();
-                        Ext.getCmp('jumlahm').setMaxValue(b);
-                        Ext.getCmp('jumlahm').setValue(0);
+                        
                         }
                     }
                 },
@@ -110,17 +113,15 @@ Ext.define('Inventori.view.main.barang.addMasuk', {
                     label: 'Jumlah',
                     ui: 'action',
                     minValue: 0,
-                    maxValue: 0,
+                    maxValue: 9999,
                     clearable: true,
                     stepValue: 1,
                     cycle: true,
                     listeners: {
                         change: function(){
                            cek = Ext.getCmp('jumlahm').getValue();
-                           if(cek == 0){
-                            Ext.getCmp('ok').setDisabled(true);
-                           }
-                           else{
+                           cek1 = Ext.getCmp('id_barang').getValue();
+                           if(cek != 0){
                             Ext.getCmp('ok').setDisabled(false);
                            }
                         }
@@ -136,7 +137,6 @@ Ext.define('Inventori.view.main.barang.addMasuk', {
                     reference: 'baranglis',
                     store: 'lisbarang1',
                     itemTpl: '{id_barang} : {nama_barang} -> {jumlah_barang}'
-                    
                 },
                 {
                     docked: 'bottom',

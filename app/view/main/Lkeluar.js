@@ -48,6 +48,7 @@ extend: 'Ext.grid.Grid',
                         cell = record.getRecord();
                         Ext.getStore('liskeluar').remove(cell);
                         Ext.getStore('liskeluar').load();
+                        Ext.getStore('lisbarang').load();
                     }
                 }
 
@@ -60,14 +61,17 @@ extend: 'Ext.grid.Grid',
             xtype: 'toolbar',
             items: [
                 {
-                    xtype: 'textfield',
+                xtype: 'searchfield',
                     placeHolder: 'Nama Barang',
-                    name: 'namacar'
-                },
-                {
-                    xtype: 'button',
+                    id: 'namacari2',
+                    name: 'namacari2',
                     iconCls: 'x-fa fa-search',
-                    name: 'namacar'
+                    listeners: {
+                        change: function(){
+                            caris = Ext.getCmp('namacari2').getValue();
+                            Ext.getStore('liskeluar').filter('nama_barang' , caris);
+                        }
+                    }   
                 },
                 {
                     text: ''
@@ -95,8 +99,8 @@ extend: 'Ext.grid.Grid',
                             easing: 'ease-out'
                         },
                         centered: true,
-                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 600,
-                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 600,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 340 : 340,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 220,
                         styleHtmlContent: true,
                         scrollable: true
                     });

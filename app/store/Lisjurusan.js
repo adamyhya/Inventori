@@ -10,7 +10,10 @@ Ext.define('Inventori.store.Lisjurusan', {
     proxy: {
         type: 'jsonp',
         api: {
-            read: "http://localhost/inventaris/apijurusan.php"
+            read: "http://localhost/inventaris/apijurusan.php?action=1",
+            create: "http://localhost/inventaris/apijurusan.php?action=2",
+            destroy: "http://localhost/inventaris/apijurusan.php?action=3",
+              
         },
         reader: {
             type: 'json',

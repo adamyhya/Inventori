@@ -49,8 +49,8 @@ Ext.define('Inventori.view.main.barang.Tambahbarang', {
                 {
                     xtype: 'selectfield',
                     label: 'Nama Kategori',
-                    id: 'namak',
-                    name: 'namak',
+                    id: 'namakat',
+                    name: 'namakat',
                     valueField: 'id_kategori',
                     displayField: 'nama_kategori',
                     bind: {

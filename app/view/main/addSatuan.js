@@ -38,6 +38,7 @@ Ext.define('Inventori.view.main.addSatuan', {
             items: [
                 {
                     xtype: 'textfield',
+                    id: 'namasa',
                     name: 'namasa',
                     label: 'Nama Satuan',
                     placeHolder: 'Nama Satuan',
@@ -57,10 +58,7 @@ Ext.define('Inventori.view.main.addSatuan', {
                         xtype: 'button',
                         text: 'OK',
                         ui: 'action',
-                        scope: this,
-                        listeners:{
-                            tap: 'tambahB'
-                        }
+                        handler: 'addSatuan'
 
                     },
                     {

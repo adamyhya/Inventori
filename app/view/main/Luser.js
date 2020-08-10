@@ -57,14 +57,17 @@ extend: 'Ext.grid.Grid',
             xtype: 'toolbar',
             items: [
                 {
-                    xtype: 'textfield',
-                    placeHolder: 'Nama Satuan',
-                    name: 'namasat'
-                },
-                {
-                    xtype: 'button',
+                    xtype: 'searchfield',
+                    placeHolder: 'Nama Pengguna',
+                    id: 'namacariu',
+                    name: 'namacariu',
                     iconCls: 'x-fa fa-search',
-                    name: 'butsat'
+                    listeners: {
+                        change: function(){
+                            caris = Ext.getCmp('namacariu').getValue();
+                            Ext.getStore('lisuser').filter('nama_user' , caris);
+                        }
+                    }   
                 },
                 {
                     text: ''

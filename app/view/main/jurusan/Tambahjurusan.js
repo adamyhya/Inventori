@@ -38,7 +38,8 @@ Ext.define('Inventori.view.main.jurusan.Tambahjurusan', {
             items: [
                 {
                     xtype: 'textfield',
-                    name: 'namasa',
+                    id: 'namajur',
+                    name: 'namajur',
                     label: 'Nama jurusan',
                     placeHolder: 'Nama jurusan',
                     autoCapitalize: true,
@@ -59,7 +60,7 @@ Ext.define('Inventori.view.main.jurusan.Tambahjurusan', {
                         ui: 'action',
                         scope: this,
                         listeners:{
-                            tap: 'tambahB'
+                            tap: 'addJurusan'
                         }
 
                     },

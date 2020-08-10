@@ -39,7 +39,12 @@ extend: 'Ext.grid.Grid',
                     iconCls: 'x-fa fa-trash-o',
                     ui: 'action',
                     bind: '',
-                    handler: 'onVerifyTap'
+                    handler: function(btn) {
+                        record = btn.getParent();
+                        cell = record.getRecord();
+                        Ext.getStore('liskategori').remove(cell);
+                        Ext.getStore('liskategori').load();
+                    }
                 }
 
                  }
@@ -52,14 +57,17 @@ extend: 'Ext.grid.Grid',
             xtype: 'toolbar',
             items: [
                 {
-                    xtype: 'textfield',
+                    xtype: 'searchfield',
                     placeHolder: 'Nama Kategori',
-                    name: 'namakat'
-                },
-                {
-                    xtype: 'button',
+                    id: 'namacarik',
+                    name: 'namacarik',
                     iconCls: 'x-fa fa-search',
-                    name: 'butkat'
+                    listeners: {
+                        change: function(){
+                            caris = Ext.getCmp('namacarik').getValue();
+                            Ext.getStore('liskategori').filter('nama_kategori' , caris);
+                        }
+                    }   
                 },
                 {
                     text: ''
@@ -100,9 +108,5 @@ extend: 'Ext.grid.Grid',
                 },
             ]
         }
-        ],
-
-    listeners: {
-        select: 'onItemSelected'
-    }
+        ]
 });

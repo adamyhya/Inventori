@@ -1,7 +1,7 @@
 Ext.define('Inventori.view.main.Ljurusan', {
 extend: 'Ext.grid.Grid',
+alias: 'view.ljurusan',
     xtype: 'jurusanlist',
-
     requires: [
         'Inventori.store.Lisjurusan'
     ],
@@ -13,7 +13,7 @@ extend: 'Ext.grid.Grid',
     columns: [
         { text: 'No', dataIndex: 'nomor', width: 55 },
         { text: '',  dataIndex: 'id_jurusan', hidden:true },
-        { text: 'Nama Kategori', dataIndex: 'nama_jurusan', width: 200 },
+        { text: 'Nama Jurusan', dataIndex: 'nama_jurusan', width: 200 },
         { text: 'Edit',
             width: 100,
             ignoreExport: true,
@@ -39,7 +39,12 @@ extend: 'Ext.grid.Grid',
                     iconCls: 'x-fa fa-trash-o',
                     ui: 'action',
                     bind: '',
-                    handler: 'onVerifyTap'
+                    handler: function(btn) {
+                        record = btn.getParent();
+                        cell = record.getRecord();
+                        Ext.getStore('lisjurusan').remove(cell);
+                        Ext.getStore('lisjurusan').load();
+                    }
                 }
 
                  }
@@ -52,14 +57,17 @@ extend: 'Ext.grid.Grid',
             xtype: 'toolbar',
             items: [
                 {
-                    xtype: 'textfield',
-                    placeHolder: 'Nama jurusan',
-                    name: 'namasat'
-                },
-                {
-                    xtype: 'button',
+                    xtype: 'searchfield',
+                    placeHolder: 'Nama Jurusan',
+                    id: 'namacarij',
+                    name: 'namacarij',
                     iconCls: 'x-fa fa-search',
-                    name: 'butsat'
+                    listeners: {
+                        change: function(){
+                            caris = Ext.getCmp('namacarij').getValue();
+                            Ext.getStore('lisjurusan').filter('nama_jurusan' , caris);
+                        }
+                    }   
                 },
                 {
                     text: ''
@@ -100,9 +108,5 @@ extend: 'Ext.grid.Grid',
                 },
             ]
         }
-        ],
-
-    listeners: {
-        select: 'onItemSelected'
-    }
+        ]
 });

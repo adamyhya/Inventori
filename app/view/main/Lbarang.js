@@ -60,14 +60,17 @@ alias: 'view.lbarang',
             xtype: 'toolbar',
             items: [
                 {
-                    xtype: 'textfield',
+                    xtype: 'searchfield',
                     placeHolder: 'Nama Barang',
-                    name: 'namacar'
-                },
-                {
-                    xtype: 'button',
+                    id: 'namacari',
+                    name: 'namacari',
                     iconCls: 'x-fa fa-search',
-                    name: 'namacar'
+                    listeners: {
+                        change: function(){
+                            caris = Ext.getCmp('namacari').getValue();
+                            Ext.getStore('lisbarang').filter('nama_barang' , caris);
+                        }
+                    }   
                 },
                 {
                     text: ''

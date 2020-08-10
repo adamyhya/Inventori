@@ -31,7 +31,7 @@ Ext.define('Inventori.view.main.Tabbarusett', {
             iconCls: 'x-fa fa-cogs',
             layout: 'fit',
             items: [{
-               xtype: 'satuanlist'
+               //xtype: 'satuanlist'
              }],
             cls: 'card'
         }
