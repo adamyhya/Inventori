@@ -4,9 +4,9 @@
  *
  * See this in action at http://dev.sencha.com/deploy/sencha-touch-2-b3/examples/kitchensink/index.html#demo/forms
  */
-Ext.define('Inventori.view.main.addUser', {
+Ext.define('Inventori.view.main.barang.Edituser', {
     extend: 'Ext.form.Panel',
-    xtype: 'Tbhuser',
+    xtype: 'Edtuser',
     requires: [
         'Ext.form.FieldSet',
         'Ext.field.Number',
@@ -20,19 +20,20 @@ Ext.define('Inventori.view.main.addUser', {
         'Ext.field.Radio',
         'Inventori.view.main.MainController',
         'Inventori.view.main.MainModel'
+
     ],
-      controller: 'main',
+    controller: 'main',
     viewModel: 'main',
-    shadow: true,
     width: 300,
-    height: 400,
-    scrollable: true,
-    cls: 'demo-solid-background',
-    id: 'tuserfrm',
+            height: 440,
+            scrollable: true,
+    shadow: true,
+    cls: 'demo-solid-background',    
+    id: 'euserfrm',
     items:[{
             xtype: 'fieldset',
-            id: 'fieldset7',
-            title: 'Tambah Pengguna',
+            id: 'edtuser',
+            title: 'Edit User',
 
             default:{
                 labelWidth: '35%'
@@ -40,8 +41,12 @@ Ext.define('Inventori.view.main.addUser', {
             items: [
                 {
                     xtype: 'textfield',
-                    id: 'uname',
-                    name: 'uname',
+                    id: 'id_user',
+                    name: 'id_user'
+                },{
+                    xtype: 'textfield',
+                    id: 'unamee',
+                    name: 'unamee',
                     label: 'Username',
                     placeHolder: 'Username',
                     required: true,
@@ -50,16 +55,16 @@ Ext.define('Inventori.view.main.addUser', {
                 {
                     xtype: 'passwordfield',
                     revealable: true,
-                    id: 'pwd',
-                    name : 'pwd',
+                    id: 'pwde',
+                    name : 'pwde',
                     label: 'Password',
                     required: true,
                     clearIcon: true
                 },
                 {
                     xtype: 'textfield',
-                    id: 'namaus',
-                    name: 'namaus',
+                    id: 'namause',
+                    name: 'namause',
                     label: 'Nama',
                     placeHolder: 'Nama',
                     autoCapitalize: true,
@@ -68,8 +73,8 @@ Ext.define('Inventori.view.main.addUser', {
                 },
                 {
                     xtype: 'selectfield',
-                    id: 'akses',
-                    name: 'akses',
+                    id: 'aksese',
+                    name: 'aksese',
                     label: 'Hak Akses',
                     placeHolder: 'Pilih Hak Akses..',
                     options: [
@@ -86,17 +91,17 @@ Ext.define('Inventori.view.main.addUser', {
                 },
                 {
                     xtype: 'textfield',
-                    id: 'kontak',
-                    name: 'kontak',
+                    id: 'kontake',
+                    name: 'kontake',
                     label: 'Kontak',
                     placeHolder: '0812XXXXXXXX',
                     required: true,
                     clearIcon: true
-                },
+                },        
                 {
                     docked: 'bottom',
                     defaults: {
-                     xtype: 'button',
+                    xtype: 'button',
                     style: 'margin: 1em',
                     flex: 1
                     },
@@ -105,17 +110,18 @@ Ext.define('Inventori.view.main.addUser', {
                         xtype: 'button',
                         text: 'OK',
                         ui: 'action',
-                        handler: 'addUser'
-
-                    },
-                    {
+                        handler: 'editUser'
+                    }
+                    ,{
                         xtype: 'button',
                         text: 'Reset',
                         ui: 'action',
                         handler: function(){
-                        Ext.getCmp('tuserfrm').reset();
+                        Ext.getCmp('euserfrm').reset();
+                        }
+
                     }
-                    }
+                    
                     ]
                 }
                 

@@ -32,6 +32,7 @@ Ext.define('Inventori.view.main.Tabbarubarang', {
             iconCls: 'x-fa fa-shopping-cart',
             layout: 'fit',
             items: [{
+                id: 'lmasuk',
                xtype: 'masuklist'
              }],
             cls: 'card'
@@ -41,6 +42,7 @@ Ext.define('Inventori.view.main.Tabbarubarang', {
             iconCls: 'x-fa fa-bars',
             layout: 'fit',
             items: [{
+               id: 'lkeluar',
                xtype: 'keluarlist'
              }],
             cls: 'card'

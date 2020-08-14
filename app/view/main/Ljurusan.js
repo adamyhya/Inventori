@@ -14,21 +14,6 @@ alias: 'view.ljurusan',
         { text: 'No', dataIndex: 'nomor', width: 55 },
         { text: '',  dataIndex: 'id_jurusan', hidden:true },
         { text: 'Nama Jurusan', dataIndex: 'nama_jurusan', width: 200 },
-        { text: 'Edit',
-            width: 100,
-            ignoreExport: true,
-            cell: {
-                xtype: 'widgetcell',
-                widget: {
-                    xtype: 'button',
-                    iconCls: 'x-fa fa-pencil',
-                    ui: 'action',
-                    bind: '',
-                    handler: 'onVerifyTap'
-                }
-
-                 }
-        },
         { text: 'Hapus',
             width: 100,
             ignoreExport: true,
@@ -74,10 +59,8 @@ alias: 'view.ljurusan',
                 },
                 {
                     xtype: 'button',
-                    
                     iconCls: 'x-fa fa-plus',
-                    text: 'Add',
-                    name: 'butadd',
+                    name: 'butadd6',
                     handler: function() {
                 if (!this.overlay) {
                     this.overlay = Ext.Viewport.add({
@@ -105,8 +88,52 @@ alias: 'view.ljurusan',
 
                 this.overlay.show();
             }
-                },
+                },{
+
+                    xtype: 'button',                   
+                    iconCls: 'x-fa fa-pencil',
+                    id: 'showedtb5',
+                    name: 'showedtb5',
+                    disabled: true,
+                    bind: '',
+                    handler: function() {
+                    if (!this.overlay) {
+                    this.overlay = Ext.Viewport.add({
+                        xtype: 'Edtjurusan',
+                        floated: true,
+                        modal: true,
+                        hideOnMaskTap: true,
+                        showAnimation: {
+                            type: 'popIn',
+                            duration: 250,
+                            easing: 'ease-out'
+                        },
+                        hideAnimation: {
+                            type: 'popOut',
+                            duration: 250,
+                            easing: 'ease-out'
+                        },
+                        centered: true,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 340,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 430,
+                        styleHtmlContent: true,
+                        scrollable: true
+                    });
+                }
+                this.overlay.show();
+                record = Ext.getCmp('ljurusan').getSelection();  
+                Ext.getCmp('id_jurusane').setValue(record.data.id_jurusan);
+                Ext.getCmp('nama_jurusane').setValue(record.data.nama_jurusan);
+                }
+            }
+
             ]
         }
-        ]
+        ],
+
+    listeners: {
+        select: function(){
+            Ext.getCmp('showedtb5').setDisabled(false);
+        }
+    }
 });

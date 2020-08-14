@@ -15,6 +15,7 @@ Ext.define('Inventori.store.Liskategori', {
             read: "http://localhost/inventaris/apikategori.php?action=1",
             create: "http://localhost/inventaris/apikategori.php?action=2",
             destroy: "http://localhost/inventaris/apikategori.php?action=3",
+            update: "http://localhost/inventaris/apikategori.php?action=4",             
         },
         reader: {
             type: 'json',

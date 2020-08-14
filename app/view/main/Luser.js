@@ -14,26 +14,11 @@ extend: 'Ext.grid.Grid',
         { text: 'No', dataIndex: 'nomor', width: 55 },
         { text: '',  dataIndex: 'id_user', hidden:true },
         { text: 'Username', dataIndex: 'uname', width: 150 },
-        { text: 'Password', dataIndex: 'pwd', width: 140 },
+        { text: 'Password', dataIndex: 'pwd', hidden: true },
         { text: 'Nama', dataIndex: 'nama_user', width: 150 },
         { text: 'Hak Akases', dataIndex: 'akses', width: 120 },
         { text: 'Kontak', dataIndex: 'kontak', width: 150 },
         { text: 'Tanggal Buat', dataIndex: 'tgl_buat', width: 200 },
-        { text: 'Edit',
-            width: 100,
-            ignoreExport: true,
-            cell: {
-                xtype: 'widgetcell',
-                widget: {
-                    xtype: 'button',
-                    iconCls: 'x-fa fa-pencil',
-                    ui: 'action',
-                    bind: '',
-                    handler: 'onVerifyTap'
-                }
-
-                 }
-        },
         { text: 'Hapus',
             width: 100,
             ignoreExport: true,
@@ -44,7 +29,12 @@ extend: 'Ext.grid.Grid',
                     iconCls: 'x-fa fa-trash-o',
                     ui: 'action',
                     bind: '',
-                    handler: 'onVerifyTap'
+                    handler: function(btn) {
+                        record = btn.getParent();
+                        cell = record.getRecord();
+                        Ext.getStore('lisuser').remove(cell);
+                        Ext.getStore('lisuser').load();
+                    }
                 }
 
                  }
@@ -76,7 +66,6 @@ extend: 'Ext.grid.Grid',
                     xtype: 'button',
                     
                     iconCls: 'x-fa fa-plus',
-                    text: 'Add',
                     name: 'butadd',
                     handler: function() {
                 if (!this.overlay) {
@@ -97,7 +86,7 @@ extend: 'Ext.grid.Grid',
                         },
                         centered: true,
                         width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 600,
-                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 600,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 400 : 600,
                         styleHtmlContent: true,
                         scrollable: true
                     });
@@ -106,11 +95,53 @@ extend: 'Ext.grid.Grid',
                 this.overlay.show();
             }
                 },
+                {
+                    xtype: 'button',                   
+                    iconCls: 'x-fa fa-pencil',
+                    id: 'showedtb7',
+                    name: 'showedtb7',
+                    disabled: true,
+                    bind: '',
+                    handler: function() {
+                    if (!this.overlay) {
+                    this.overlay = Ext.Viewport.add({
+                        xtype: 'Edtuser',
+                        floated: true,
+                        modal: true,
+                        hideOnMaskTap: true,
+                        showAnimation: {
+                            type: 'popIn',
+                            duration: 250,
+                            easing: 'ease-out'
+                        },
+                        hideAnimation: {
+                            type: 'popOut',
+                            duration: 250,
+                            easing: 'ease-out'
+                        },
+                        centered: true,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 340,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 430,
+                        styleHtmlContent: true,
+                        scrollable: true
+                    });
+                }
+                this.overlay.show();
+                record = Ext.getCmp('luser').getSelection();  
+                Ext.getCmp('id_user').setValue(record.data.id_user);
+                Ext.getCmp('namause').setValue(record.data.nama_user);
+                Ext.getCmp('unamee').setValue(record.data.uname);
+                Ext.getCmp('aksese').setValue(record.data.akses);
+                Ext.getCmp('kontake').setValue(record.data.kontak);
+                }
+            }
             ]
         }
         ],
 
     listeners: {
-        select: 'onItemSelected'
+        select: function(){
+            Ext.getCmp('showedtb7').setDisabled(false);
+        }
     }
 });

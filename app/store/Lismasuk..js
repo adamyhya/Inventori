@@ -5,7 +5,7 @@ Ext.define('Inventori.store.Lismasuk', {
     autoLoad: true,
     autoSync: true,
     fields: [
-        'nomor', 'id_barang_masuk', 'nama_barang', 'nama_kategori', 'jumlah_barang_masuk', 'nama_satuan', 'tgl_masuk', 'nama_jurusan', 'id_pengguna', 'keterangan'
+        'nomor', 'id_brg_masuk', 'id_barang', 'nama_barang', 'nama_kategori', 'jumlah_barang_masuk', 'nama_satuan', 'tgl_masuk', 'nama_jurusan', 'id_pengguna', 'keterangan'
     ],
 
 
@@ -15,6 +15,7 @@ Ext.define('Inventori.store.Lismasuk', {
             read: "http://localhost/inventaris/apimasuk.php?action=1",
             create: "http://localhost/inventaris/apimasuk.php?action=2",
             destroy: "http://localhost/inventaris/apimasuk.php?action=3",
+            update: "http://localhost/inventaris/apimasuk.php?action=4",
         },
         reader: {
             type: 'json',

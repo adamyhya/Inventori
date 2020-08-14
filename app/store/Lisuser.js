@@ -15,6 +15,8 @@ Ext.define('Inventori.store.Lisuser', {
             read: "http://localhost/inventaris/apiuser.php?action=1",
             create: "http://localhost/inventaris/apiuser.php?action=2",
             destroy: "http://localhost/inventaris/apiuser.php?action=3",
+            update: "http://localhost/inventaris/apiuser.php?action=4",
+            
         },
         reader: {
             type: 'json',

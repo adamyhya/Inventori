@@ -22,6 +22,7 @@ Ext.define('Inventori.view.main.Tabbarusett', {
             iconCls: 'x-fa fa-users',
             layout: 'fit',
             items: [{
+                id: 'luser',
                xtype: 'userlist'
              }],
             cls: 'card'

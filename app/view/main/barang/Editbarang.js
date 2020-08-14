@@ -4,9 +4,9 @@
  *
  * See this in action at http://dev.sencha.com/deploy/sencha-touch-2-b3/examples/kitchensink/index.html#demo/forms
  */
-Ext.define('Inventori.view.main.addUser', {
+Ext.define('Inventori.view.main.barang.Editbarang', {
     extend: 'Ext.form.Panel',
-    xtype: 'Tbhuser',
+    xtype: 'Edtbarang',
     requires: [
         'Ext.form.FieldSet',
         'Ext.field.Number',
@@ -20,19 +20,20 @@ Ext.define('Inventori.view.main.addUser', {
         'Ext.field.Radio',
         'Inventori.view.main.MainController',
         'Inventori.view.main.MainModel'
+
     ],
-      controller: 'main',
+    controller: 'main',
     viewModel: 'main',
-    shadow: true,
     width: 300,
-    height: 400,
-    scrollable: true,
-    cls: 'demo-solid-background',
-    id: 'tuserfrm',
+            height: 400,
+            scrollable: true,
+    shadow: true,
+    cls: 'demo-solid-background',    
+    id: 'ebarangfrm',
     items:[{
             xtype: 'fieldset',
-            id: 'fieldset7',
-            title: 'Tambah Pengguna',
+            id: 'edtbrg',
+            title: 'Edit Barang',
 
             default:{
                 labelWidth: '35%'
@@ -40,59 +41,54 @@ Ext.define('Inventori.view.main.addUser', {
             items: [
                 {
                     xtype: 'textfield',
-                    id: 'uname',
-                    name: 'uname',
-                    label: 'Username',
-                    placeHolder: 'Username',
-                    required: true,
-                    clearIcon: true
-                },
-                {
-                    xtype: 'passwordfield',
-                    revealable: true,
-                    id: 'pwd',
-                    name : 'pwd',
-                    label: 'Password',
-                    required: true,
-                    clearIcon: true
+                    id: 'idbar',
+                    name: 'idbar',
+                    hidden: true     
                 },
                 {
                     xtype: 'textfield',
-                    id: 'namaus',
-                    name: 'namaus',
-                    label: 'Nama',
-                    placeHolder: 'Nama',
+                    id: 'namaeb',
+                    name: 'namaeb',
+                    label: 'Nama Barang',
+                    placeHolder: 'Nama Barang',
                     autoCapitalize: true,
                     required: true,
                     clearIcon: true
                 },
                 {
                     xtype: 'selectfield',
-                    id: 'akses',
-                    name: 'akses',
-                    label: 'Hak Akses',
-                    placeHolder: 'Pilih Hak Akses..',
-                    options: [
-                        {
-                            text: 'Admin',
-                            value: '1'
-                        },
-                        {
-                            text: 'Staff',
-                            value: '2'
-                        }
-                        
-                    ]
+                    label: 'Nama Kategori',
+                    id: 'namaekat',
+                    name: 'namaekat',
+                    valueField: 'id_kategori',
+                    displayField: 'nama_kategori',
+                    bind: {
+                        store: 'liskategori'
+                    }                
+                },         
+                {
+                    xtype: 'spinnerfield',
+                    id: 'jumlaheb',
+                    name: 'jumlaheb',
+                    label: 'Jumlah',
+                    minValue: 0,
+                    maxValue: 9999,
+                    clearable: true,
+                    stepValue: 1,
+                    cycle: true
                 },
                 {
-                    xtype: 'textfield',
-                    id: 'kontak',
-                    name: 'kontak',
-                    label: 'Kontak',
-                    placeHolder: '0812XXXXXXXX',
-                    required: true,
-                    clearIcon: true
+                    xtype: 'selectfield',
+                    label: 'Nama Satuan',
+                    id: 'namaes',
+                    name: 'namaes',
+                    valueField: 'id_satuan',
+                    displayField: 'nama_satuan',
+                    bind: {
+                        store: 'lissatuan'
+                    }
                 },
+                         
                 {
                     docked: 'bottom',
                     defaults: {
@@ -105,17 +101,18 @@ Ext.define('Inventori.view.main.addUser', {
                         xtype: 'button',
                         text: 'OK',
                         ui: 'action',
-                        handler: 'addUser'
-
-                    },
-                    {
+                        handler: 'editBarang'
+                    }
+                    ,{
                         xtype: 'button',
                         text: 'Reset',
                         ui: 'action',
                         handler: function(){
-                        Ext.getCmp('tuserfrm').reset();
+                        Ext.getCmp('ebarangfrm').reset();
+                        }
+
                     }
-                    }
+                    
                     ]
                 }
                 

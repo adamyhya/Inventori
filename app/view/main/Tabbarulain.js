@@ -22,6 +22,7 @@ Ext.define('Inventori.view.main.Tabbarulain', {
             iconCls: 'x-fa fa-cubes',
             layout: 'fit',
             items: [{
+                id: 'lkategori',
                xtype: 'kategorilist'
              }],
             cls: 'card'
@@ -31,6 +32,7 @@ Ext.define('Inventori.view.main.Tabbarulain', {
             iconCls: 'x-fa fa-cube',
             layout: 'fit',
             items: [{
+                id: 'lsatuan',
                xtype: 'satuanlist'
              }],
             cls: 'card'
@@ -40,6 +42,7 @@ Ext.define('Inventori.view.main.Tabbarulain', {
             iconCls: 'x-fa fa-mortar-board',
             layout: 'fit',
             items: [{
+                id: 'ljurusan',
                xtype: 'jurusanlist'
              }],
             cls: 'card'

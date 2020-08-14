@@ -86,7 +86,7 @@ Ext.define('Inventori.view.main.barang.addKeluar', {
                     label: 'Nama Barang',
                     listeners: {
                         change: function(){
-                            caris = Ext.getCmp('cari').getValue();
+                            caris = Ext.getCmp('cari1').getValue();
                             Ext.getStore('lisbarang1').filter('nama_barang' , caris);
                             Ext.getCmp('jumlahk').setValue(0);
                         }

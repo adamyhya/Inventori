@@ -15,7 +15,7 @@ Ext.define('Inventori.store.Lisbarang', {
             read: "http://localhost/inventaris/apibarang.php?action=1",
             create: "http://localhost/inventaris/apibarang.php?action=2",
             destroy: "http://localhost/inventaris/apibarang.php?action=3",
-            
+            update: "http://localhost/inventaris/apibarang.php?action=4",
         },
         reader: {
             type: 'json',

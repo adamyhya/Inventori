@@ -1,12 +1,3 @@
-/**
- * Demonstrates a tabbed form panel. This uses a tab panel with 3 tabs - Basic, Sliders and Toolbars - each of which is
- * defined below.
- *
- * See this in action at http://dev.sencha.com/deploy/sencha-touch-2-b3/examples/kitchensink/index.html#demo/forms
- */
-
-var c = '';
-var d = '';
 Ext.define('Inventori.view.main.barang.addMasuk', {
     extend: 'Ext.form.Panel',
     xtype: 'Tbhmasuk',
@@ -24,7 +15,7 @@ Ext.define('Inventori.view.main.barang.addMasuk', {
         'Inventori.view.main.MainController',
         'Inventori.view.main.MainModel',
         'Inventori.store.Lisbarang',
-        'Inventori.store.Lisbarang1'
+        'Inventori.store.Lisbarang2'
     ],
       controller: 'main',
     viewModel: 'main',
@@ -135,7 +126,7 @@ Ext.define('Inventori.view.main.barang.addMasuk', {
                     shadow: true,
                     scrollable: true,
                     reference: 'baranglis',
-                    store: 'lisbarang1',
+                    store: 'lisbarang2',
                     itemTpl: '{id_barang} : {nama_barang} -> {jumlah_barang}'
                 },
                 {

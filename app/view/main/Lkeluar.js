@@ -1,5 +1,6 @@
 Ext.define('Inventori.view.main.Lkeluar', {
 extend: 'Ext.grid.Grid',
+    alias: 'view.lkeluar',
     xtype: 'keluarlist',
 
     requires: [
@@ -11,29 +12,17 @@ extend: 'Ext.grid.Grid',
     },
 
     columns: [
-        { text: '', dataIndex: 'id_barang_keluar', hidden: true },
-        { text: 'No', dataIndex: 'nomor', width: 55 },
+        { text: '', dataIndex: 'id_brg_keluar', hidden: true },
+        { text: '', dataIndex: 'id_barang', hidden: true },
+        { text: '', dataIndex: 'jumlah_barang', hidden: true }, 
         { text: 'Nama Barang',  dataIndex: 'nama_barang', width: 230 },
         { text: 'Kategori', dataIndex: 'nama_kategori', width: 120 },
-        { text: 'Jumlah', dataIndex: 'jumlah_barang_keluar', width: 80 },
+        { text: 'Jumlah', dataIndex: 'jumlah_barang_keluar', width: 120 },
         { text: 'Satuan', dataIndex: 'nama_satuan', width: 120 },
         { text: 'Tanggal', dataIndex: 'tgl_keluar', width: 180 },
         { text: 'Jurusan', dataIndex: 'nama_jurusan', width: 120 },
+        { text: 'Keterangan', dataIndex: 'keterangan', width: 230 },
         { text: 'Admin', dataIndex: 'nama_user', width: 120 },
-        { text: 'Edit',
-            width: 100,
-            ignoreExport: true,
-            cell: {
-                xtype: 'widgetcell',
-                widget: {
-                    xtype: 'button',
-                    iconCls: 'x-fa fa-pencil',
-                    ui: 'action',
-                    bind: '',
-                    handler: 'onVerifyTap'
-                }
-                 }
-        },
         { text: 'Hapus',
             width: 100,
             ignoreExport: true,
@@ -79,8 +68,7 @@ extend: 'Ext.grid.Grid',
                 {
                     xtype: 'button',           
                     iconCls: 'x-fa fa-plus',
-                    text: 'Add',
-                    name: 'butadd',
+                    name: 'butadd3',
                     handler: function() {
                     if (!this.overlay) {
                     this.overlay = Ext.Viewport.add({
@@ -107,13 +95,60 @@ extend: 'Ext.grid.Grid',
                 }
 
                 this.overlay.show();
-            }
+                }
+
+
                 },
+                {
+
+                    xtype: 'button',                   
+                    iconCls: 'x-fa fa-pencil',
+                    id: 'showedtb2',
+                    name: 'showedtb2',
+                    disabled: true,
+                    bind: '',
+                    handler: function() {
+                    if (!this.overlay) {
+                    this.overlay = Ext.Viewport.add({
+                        xtype: 'Edtkeluar',
+                        floated: true,
+                        modal: true,
+                        hideOnMaskTap: true,
+                        showAnimation: {
+                            type: 'popIn',
+                            duration: 250,
+                            easing: 'ease-out'
+                        },
+                        hideAnimation: {
+                            type: 'popOut',
+                            duration: 250,
+                            easing: 'ease-out'
+                        },
+                        centered: true,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 240 : 340,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 430 : 430,
+                        styleHtmlContent: true,
+                        scrollable: true
+                    });
+                }
+                this.overlay.show();
+                record = Ext.getCmp('lkeluar').getSelection();  
+                Ext.getCmp('id_brg_keluar').setValue(record.data.id_brg_keluar);
+                Ext.getCmp('id_barangk').setValue(record.data.id_barang);
+                Ext.getCmp('nama_brg_keluar').setValue(record.data.nama_barang);
+                Ext.getCmp('nama_jurusan_keluar').setValue(record.data.nama_jurusan);
+                Ext.getCmp('jumlah_keluar').setValue(record.data.jumlah_barang_keluar);
+                Ext.getCmp('ket_brgkeluar').setValue(record.data.keterangan);
+                Ext.getCmp('stok1').setValue(record.data.jumlah_barang);
+                Ext.getCmp('jumlah_keluar').setMaxValue(record.data.jumlah_barang);
+                }
+                }                
+                
             ]
         }
         ],
 
-    listeners: {
-        select: 'onItemSelected'
-    }
+    //listeners: {
+      //  select: 'onItemSelected'
+    //}
 });
