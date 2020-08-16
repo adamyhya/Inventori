@@ -89,4 +89,5 @@ Ext.define('Inventori.view.main.login.Login', {
 
         }
     ]
+
 });

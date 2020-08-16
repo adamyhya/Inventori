@@ -115,6 +115,15 @@ extend: 'Ext.grid.Grid',
                 },
                 {
                     text: ''
+                },
+                
+                    {
+                 xtype: 'button', 
+                 //ui: 'action',          
+                    iconCls: 'x-fa fa-floppy-o',
+                    text: 'Save'
+                    
+                
                 }/*,
                 {
                     xtype: 'button',           

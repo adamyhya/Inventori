@@ -5932,7 +5932,7 @@ html.x-big {
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/Progress.scss:227 */
 .x-progress .x-progress-bar {
     min-height: 4px;
-    background-color: #2196f3;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -6052,7 +6052,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/Panel.scss:632 */
 .x-panel-header {
-    background-color: #2196f3;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     background-image: none;
     color: #fff;
@@ -6375,7 +6375,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/Button.scss:650 */
 .x-button {
-    color: #2196f3;
+    color: #4ea83e;
     color: var(--base-color);
     padding: 0.3077em 0.61539em;
     font: 600 1.08334rem/1.23077em Roboto, sans-serif;
@@ -6403,16 +6403,16 @@ html.x-big {
 .x-button.x-button-pressed {
     color: #fafafa;
     color: var(--background-color);
-    background-color: rgba(33, 150, 243, 0.8);
+    background-color: rgba(78, 168, 62, 0.8);
     background-color: var(--base-pressed-color);
     background-image: none;
-    border-color: rgba(12, 130, 223, 0.8);
+    border-color: rgba(64, 138, 51, 0.8);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/Button.scss:679 */
 .x-button .x-button-icon {
     width: 1.23077em;
     height: 1.23077em;
-    color: #2196f3;
+    color: #4ea83e;
     color: var(--base-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-base/sass/etc/mixins/icon.scss:63 */
@@ -6493,8 +6493,8 @@ html.x-big {
 .x-button-action {
     color: #fff;
     color: var(--base-foreground-color);
-    border-color: #0c82df;
-    background-color: #2196f3;
+    border-color: #408a33;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -6502,9 +6502,9 @@ html.x-big {
 .x-button-action.x-button-pressing,
 .x-button-action.x-button-pressed {
     color: #fff;
-    background-color: #0b76cc;
+    background-color: #397b2e;
     background-image: none;
-    border-color: #0960a5;
+    border-color: #2b5d23;
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/Button.scss:679 */
 .x-button-action .x-button-icon {
@@ -6520,8 +6520,8 @@ html.x-big {
 .x-button-alt {
     color: #fff;
     color: var(--base-foreground-color);
-    border-color: #0c82df;
-    background-color: #2196f3;
+    border-color: #408a33;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -6529,10 +6529,10 @@ html.x-big {
 .x-button-alt.x-button-pressing,
 .x-button-alt.x-button-pressed {
     color: #fff;
-    background-color: #2196f3;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     background-image: none;
-    border-color: #0c82df;
+    border-color: #408a33;
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/Button.scss:679 */
 .x-button-alt .x-button-icon {
@@ -6628,8 +6628,8 @@ html.x-big {
 .x-button-segmented {
     color: #fff;
     color: var(--base-foreground-color);
-    border-color: #0c82df;
-    background-color: #2196f3;
+    border-color: #408a33;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -6637,10 +6637,10 @@ html.x-big {
 .x-button-segmented.x-button-pressing,
 .x-button-segmented.x-button-pressed {
     color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(33, 150, 243, 0.8);
+    background-color: rgba(78, 168, 62, 0.8);
     background-color: var(--base-pressed-color);
     background-image: none;
-    border-color: rgba(12, 130, 223, 0.8);
+    border-color: rgba(64, 138, 51, 0.8);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/Button.scss:679 */
 .x-button-segmented .x-button-icon {
@@ -6683,7 +6683,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/field/Field.scss:313 */
 .x-field.x-focused .x-label-el {
-    color: #2196f3;
+    color: #4ea83e;
     color: var(--base-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/field/Field.scss:333 */
@@ -6755,7 +6755,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/field/trigger/Trigger.scss:235 */
 .x-trigger.x-interactive:active .x-icon-el {
-    color: rgba(33, 150, 243, 0.8);
+    color: rgba(78, 168, 62, 0.8);
     color: var(--base-pressed-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/src/field/trigger/Trigger.scss:21 */
@@ -6835,7 +6835,7 @@ html.x-big {
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/field/Text.scss:355 */
 .x-textfield.x-focused .x-input {
     border-width: 0 0 2px 0;
-    border-color: #2196f3;
+    border-color: #4ea83e;
     border-color: var(--base-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/field/Text.scss:366 */
@@ -6953,10 +6953,10 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/Toolbar.scss:318 */
 .x-titlebar {
-    background-color: #2196f3;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     background-image: none;
-    border-color: #010c14;
+    border-color: #000;
     font: 600 1.33334rem/1.25em Roboto, sans-serif;
     color: #fff;
     color: var(--base-foreground-color);
@@ -7126,7 +7126,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/carousel/Carousel.scss:56 */
 .x-carousel-indicator-light span.x-carousel-indicator-active {
-    background-color: #2196f3;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -7138,7 +7138,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/carousel/Carousel.scss:56 */
 .x-carousel-indicator-dark span.x-carousel-indicator-active {
-    background-color: #2196f3;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -7276,16 +7276,16 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/dataview/ListItem.scss:561 */
 .x-listitem.x-listitem.x-pressed {
-    background-color: rgba(33, 150, 243, 0.8);
+    background-color: rgba(78, 168, 62, 0.8);
     background-color: var(--base-pressed-color);
     color: #fff;
     color: var(--reverse-color);
-    border-color: rgba(33, 150, 243, 0.8);
+    border-color: rgba(78, 168, 62, 0.8);
     border-color: var(--base-pressed-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/dataview/ListItem.scss:567 */
 .x-listitem.x-pressed + .x-listitem {
-    border-top-color: rgba(33, 150, 243, 0.8);
+    border-top-color: rgba(78, 168, 62, 0.8);
     border-top-color: var(--base-pressed-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/dataview/ListItem.scss:440 */
@@ -7342,7 +7342,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/dataview/ListItem.scss:493 */
 .x-listitem-disclosure .x-icon-el:active {
-    background-color: rgba(33, 150, 243, 0.8);
+    background-color: rgba(78, 168, 62, 0.8);
     background-color: var(--base-pressed-color);
     color: #fff;
     color: var(--reverse-color);
@@ -7598,7 +7598,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/field/Checkbox.scss:155 */
 .x-checkboxfield.x-checked .x-input {
-    color: #2196f3;
+    color: #4ea83e;
     color: var(--base-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-base/sass/etc/mixins/icon.scss:63 */
@@ -7749,7 +7749,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/src/field/Select.scss:14 */
 .x-selectfield-overlay .x-listitem.x-selected .x-list-label:after {
-    color: #2196f3;
+    color: #4ea83e;
     color: var(--base-color);
     position: absolute;
     right: 0.6em;
@@ -7758,7 +7758,7 @@ html.x-big {
 .x-thumb {
     height: 18px;
     width: 18px;
-    background-color: #2196f3;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     border-radius: 9px;
     margin-top: -9px;
@@ -7896,7 +7896,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/slider/Thumb.scss:228 */
 .x-thumb-toggle-on {
-    background-color: #2196f3;
+    background-color: #4ea83e;
     background-color: var(--base-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/slider/Thumb.scss:242 */
@@ -7931,7 +7931,7 @@ html.x-big {
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/src/form/FieldContainer.scss:7 */
 .x-form-field-separators > .x-textfield.x-focused {
     border-width: 2px;
-    border-color: #2196f3;
+    border-color: #4ea83e;
     border-color: var(--base-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/src/form/FieldContainer.scss:15 */
@@ -8166,7 +8166,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/grid/cell/Check.scss:165 */
 .x-checkcell.x-checked .x-checkbox-el {
-    color: #2196f3;
+    color: #4ea83e;
     color: var(--base-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-base/sass/etc/mixins/icon.scss:63 */
@@ -8243,7 +8243,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/grid/column/Check.scss:400 */
 .x-checkcolumn.x-checked .x-checkbox-el {
-    color: #2196f3;
+    color: #4ea83e;
     color: var(--base-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-base/sass/etc/mixins/icon.scss:63 */
@@ -8354,7 +8354,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/src/grid/plugin/ViewOptions.scss:46 */
 .x-column-options-visibleindicator {
-    color: #2196f3;
+    color: #4ea83e;
     color: var(--base-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-base/sass/etc/mixins/icon.scss:63 */
@@ -8391,7 +8391,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/src/grid/plugin/ViewOptions.scss:77 */
 .x-column-options-grouped .x-column-options-groupindicator {
-    color: #2196f3;
+    color: #4ea83e;
     color: var(--base-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/src/panel/Tool.scss:1 */
@@ -8753,7 +8753,7 @@ html.x-big {
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/src/plugin/ListPaging.scss:8 */
 .x-list-paging .x-list-paging-msg {
-    color: #007de1;
+    color: #1bb300;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
@@ -8796,7 +8796,7 @@ html.x-big {
     color: var(--base-foreground-color);
     padding: 0.5em;
     font: 400 1rem/1.33334em Roboto, sans-serif;
-    background-color: #2196f3;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -8810,7 +8810,7 @@ html.x-big {
 .x-tab.x-tab-active {
     color: #fff;
     color: var(--base-foreground-color);
-    background-color: #2196f3;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     background-image: none;
     box-shadow: inset 0 -4px 0 0 #ffe0b2;
@@ -8926,12 +8926,12 @@ html.x-big {
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-material/sass/src/Component.scss:5 */
 :root {
     --dark-mode: false;
-    --base-color: #2196f3;
+    --base-color: #4ea83e;
     --base-highlight-color: #64b5f6;
     --base-light-color: #bbdefb;
     --base-dark-color: #1976d2;
-    --base-pressed-color: rgba(33, 150, 243, 0.8);
-    --base-invisible-color: rgba(33, 150, 243, 0);
+    --base-pressed-color: rgba(78, 168, 62, 0.8);
+    --base-invisible-color: rgba(78, 168, 62, 0);
     --base-foreground-color: #fff;
     --accent-color: #ff9800;
     --accent-light-color: #ffe0b2;
@@ -12792,8 +12792,8 @@ body {
     color: #fafafa;
     color: var(--background-color);
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.12), 2px 2px 5px 0 rgba(0, 0, 0, 0.08);
-    border-color: #0c82df;
-    background-color: #2196f3;
+    border-color: #408a33;
+    background-color: #4ea83e;
     background-color: var(--base-color);
     background-image: none;
 }
@@ -12802,10 +12802,10 @@ body {
 .x-button-raised.x-button-pressed {
     color: rgba(255, 255, 255, 0.8);
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.18), 2px 2px 5px 0 rgba(0, 0, 0, 0.12);
-    background-color: rgba(33, 150, 243, 0.8);
+    background-color: rgba(78, 168, 62, 0.8);
     background-color: var(--base-pressed-color);
     background-image: none;
-    border-color: rgba(12, 130, 223, 0.8);
+    border-color: rgba(64, 138, 51, 0.8);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-neptune/sass/var/Button.scss:679 */
 .x-button-raised .x-button-icon {
@@ -13050,7 +13050,7 @@ body {
 .x-msgbox .x-toolbar-docked-bottom .x-button,
 .x-container.x-floated .x-toolbar-docked-bottom .x-button,
 .x-panel.x-floated .x-toolbar-docked-bottom .x-button {
-    color: #2196f3;
+    color: #4ea83e;
     color: var(--base-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-material/sass/src/MessageBox.scss:21 */
@@ -13082,7 +13082,7 @@ body {
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-material/sass/src/Toolbar.scss:20 */
 .x-floating .x-toolbar.x-docked-bottom .x-button,
 .x-floated .x-toolbar.x-docked-bottom .x-button {
-    color: #2196f3;
+    color: #4ea83e;
     color: var(--base-color);
 }
 /* C:/Users/oksilv/sencha-workstation/Inventori/ext/modern/theme-material/sass/src/Toolbar.scss:23 */

@@ -22,8 +22,8 @@ Ext.define('Inventori.view.main.Tabbarulaporan', {
             iconCls: 'x-fa fa-shopping-cart',
             layout: 'fit',
             items: [{
-                id: 'llaporankeluarlist',
-               xtype: 'laporankeluarlist'
+                id: 'llaporanmasuklist',
+               xtype: 'laporanmasuklist'
              }],
             cls: 'card'
         },
@@ -32,8 +32,9 @@ Ext.define('Inventori.view.main.Tabbarulaporan', {
             iconCls: 'x-fa fa-bars',
             layout: 'fit',
             items: [{
-                id: 'lkeluarlaporan'
-               //xtype: 'keluarlaporan'
+                id: 'llaporankeluarlist',
+               xtype: 'laporankeluarlist'
+             
              }],
             cls: 'card'
         }

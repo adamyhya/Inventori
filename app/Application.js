@@ -27,7 +27,10 @@ Ext.define('Inventori.Application', {
         'Inventori.store.Lisuser',
         'Inventori.store.Listahunkeluar',
         'Inventori.store.Lisbulankeluar',
-        'Inventori.store.Lislaporankeluar'
+        'Inventori.store.Lislaporankeluar',
+        'Inventori.store.Lislaporanmasuk',
+        'Inventori.store.Listahunmasuk',
+        'Inventori.store.Lisbulanmasuk',
     ],
 
     launch: function () {
