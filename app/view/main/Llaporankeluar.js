@@ -1,16 +1,14 @@
-Ext.define('Inventori.view.main.Lkeluar', {
+Ext.define('Inventori.view.main.Llaporankeluar', {
 extend: 'Ext.grid.Grid',
-    alias: 'view.lkeluar',
-    xtype: 'keluarlist',
-
+    alias: 'view.llaporankeluar',
+    xtype: 'laporankeluarlist',
     requires: [
-        'Inventori.store.Liskeluar'
+        'Inventori.store.Lislaporankeluar',
+        'Inventori.store.Listahunkeluar'
     ],
-
     store: {
-        type: 'liskeluar'
+        type: 'lislaporankeluar'
     },
-
     columns: [
         { text: '', dataIndex: 'id_brg_keluar', hidden: true },
         { text: '', dataIndex: 'id_barang', hidden: true },
@@ -19,7 +17,7 @@ extend: 'Ext.grid.Grid',
         { text: 'Kategori', dataIndex: 'nama_kategori', width: 120 },
         { text: 'Jumlah', dataIndex: 'jumlah_barang_keluar', width: 120 },
         { text: 'Satuan', dataIndex: 'nama_satuan', width: 120 },
-        { text: 'Tanggal', dataIndex: 'tgl_keluar', width: 220 },
+        { text: 'Tanggal', dataIndex: 'tgl_keluar', width: 180 },
         { text: 'Jurusan', dataIndex: 'nama_jurusan', width: 120 },
         { text: 'Keterangan', dataIndex: 'keterangan', width: 230 },
         { text: 'Admin', dataIndex: 'nama_user', width: 120 },
@@ -44,7 +42,60 @@ extend: 'Ext.grid.Grid',
                  }
         }
     ],
+
     items: [
+        {
+                xtype: 'toolbar',
+                docked: 'top',
+                items:[
+                {
+                 xtype: 'selectfield',
+                    label: 'Tahun',
+                    id: 'tahun',   
+                    name: 'tahun',
+                    width: 100,
+                    valueField: 'tahun',
+                    displayField: 'tahun',
+                    bind: {
+                        store: 'listahunkeluar'
+                    },
+                    listeners: {
+                        change: function(){
+                            thn = Ext.getCmp('tahun').getValue();
+                            store = Ext.getStore('lisbulankeluar');
+                            store.proxy.extraParams = { tahun : thn };
+                            store.load();
+                            store1 = Ext.getStore('lislaporankeluar');
+                            store1.proxy.extraParams = { tgl : thn };
+                            store1.load();
+                        }
+                    }   
+                },
+                {
+                 xtype: 'selectfield',
+                    label: 'Bulan',
+                    id: 'bulan',   
+                    name: 'bulan',
+                    width: 150,
+                    valueField: 'bulan',
+                    displayField: 'bulan',
+                    bind: {
+                        store: 'lisbulankeluar'
+                    },
+                    listeners: {
+                        change: function(){
+                        bln = Ext.getCmp('bulan').getValue();
+                            Ext.getStore('lislaporankeluar').filter({
+                                property: 'tgl_keluar',
+                                value: bln,
+                                anyMatch: true,
+                                caseSensitive: false
+                            });
+                        }
+                    }   
+                }
+                ]    
+                },
         {
             docked: 'top',
             xtype: 'toolbar',
@@ -52,19 +103,19 @@ extend: 'Ext.grid.Grid',
                 {
                 xtype: 'searchfield',
                     placeHolder: 'Nama Barang',
-                    id: 'namacari2',
-                    name: 'namacari2',
+                    id: 'namacarilaporan',
+                    name: 'namacarilaporan',
                     iconCls: 'x-fa fa-search',
                     listeners: {
                         change: function(){
-                            caris = Ext.getCmp('namacari2').getValue();
-                            Ext.getStore('liskeluar').filter('nama_barang' , caris);
+                            caris = Ext.getCmp('namacarilaporan').getValue();
+                            Ext.getStore('lislaporankeluar').filter('nama_barang' , caris);
                         }
                     }   
                 },
                 {
                     text: ''
-                },
+                }/*,
                 {
                     xtype: 'button',           
                     iconCls: 'x-fa fa-plus',
@@ -98,13 +149,14 @@ extend: 'Ext.grid.Grid',
                 }
 
 
-                },
+                }*/ 
+                /*,
                 {
 
                     xtype: 'button',                   
                     iconCls: 'x-fa fa-pencil',
-                    id: 'showedtb2',
-                    name: 'showedtb2',
+                    id: 'showedtb20',
+                    name: 'showedtb20',
                     disabled: true,
                     bind: '',
                     handler: function() {
@@ -142,12 +194,10 @@ extend: 'Ext.grid.Grid',
                 Ext.getCmp('stok1').setValue(record.data.jumlah_barang);
                 Ext.getCmp('jumlah_keluar').setMaxValue(record.data.jumlah_barang);
                 }
-                }                
-                
+                }*/
             ]
         }
-        ],
-
+        ]
     //listeners: {
       //  select: 'onItemSelected'
     //}

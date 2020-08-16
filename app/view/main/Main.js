@@ -64,7 +64,11 @@ Ext.define('Inventori.view.main.Main', {
              }]
         },{
             title: 'Laporan',
-            iconCls: 'x-fa fa-book'
+            iconCls: 'x-fa fa-book',
+            layout: 'fit',
+            items: [{
+               xtype: 'tabbarulaporan'
+             }]
         },{
             title: 'Lainnya',
             iconCls: 'x-fa fa-tasks',

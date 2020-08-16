@@ -109,6 +109,7 @@ Ext.define('Inventori.view.main.barang.Editbarang', {
                         ui: 'action',
                         handler: function(){
                         Ext.getCmp('ebarangfrm').reset();
+                        
                         }
 
                     }
