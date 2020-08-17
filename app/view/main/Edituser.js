@@ -42,7 +42,8 @@ Ext.define('Inventori.view.main.barang.Edituser', {
                 {
                     xtype: 'textfield',
                     id: 'id_user',
-                    name: 'id_user'
+                    name: 'id_user',
+                    hidden: true
                 },{
                     xtype: 'textfield',
                     id: 'unamee',

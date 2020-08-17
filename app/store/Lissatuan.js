@@ -5,7 +5,7 @@ Ext.define('Inventori.store.Lissatuan', {
     autoLoad: true,
     autoSync: true,
     fields: [
-        'nomor', 'id_satuan', 'nama_satuan'
+        'nomor', 'id_satuan', 'nama_satuan', 'old_nama_satuan'
     ],
 
 

@@ -47,6 +47,12 @@ Ext.define('Inventori.view.main.barang.Editjurusan', {
                 },
                 {
                     xtype: 'textfield',
+                    id: 'old_namaj',
+                    name: 'old_namaj',
+                    hidden: true     
+                },
+                {
+                    xtype: 'textfield',
                     id: 'nama_jurusane',
                     name: 'nama_jurusane',
                     label: 'Nama Jurusan',

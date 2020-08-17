@@ -5,7 +5,7 @@ Ext.define('Inventori.store.Lisbarang', {
     autoLoad: true,
     autoSync: true,
     fields: [
-        'nomor', 'id_barang', 'nama_barang', 'nama_kategori', 'jumlah_barang', 'nama_satuan'
+        'nomor', 'id_barang', 'nama_barang', 'old_nama_barang', 'nama_kategori', 'jumlah_barang', 'old_jumlah_barang', 'nama_satuan'
     ],
 
 

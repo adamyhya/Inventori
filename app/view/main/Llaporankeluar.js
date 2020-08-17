@@ -21,7 +21,7 @@ extend: 'Ext.grid.Grid',
         { text: 'Jurusan', dataIndex: 'nama_jurusan', width: 120 },
         { text: 'Keterangan', dataIndex: 'keterangan', width: 230 },
         { text: 'Admin', dataIndex: 'nama_user', width: 120 },
-        { text: 'Hapus',
+        /*{ text: 'Hapus',
             width: 100,
             ignoreExport: true,
             cell: {
@@ -40,7 +40,7 @@ extend: 'Ext.grid.Grid',
                 }
 
                  }
-        }
+        }*/ //error
     ],
 
     items: [
@@ -68,6 +68,7 @@ extend: 'Ext.grid.Grid',
                             store1 = Ext.getStore('lislaporankeluar');
                             store1.proxy.extraParams = { tgl : thn };
                             store1.load();
+                            Ext.getCmp('ext-gridcolumn-46').setText('Nama Barang');
                         }
                     }   
                 },
@@ -91,6 +92,7 @@ extend: 'Ext.grid.Grid',
                                 anyMatch: true,
                                 caseSensitive: false
                             });
+                        Ext.getCmp('ext-gridcolumn-46').setText('Nama Barang');                            
                         }
                     }   
                 }
@@ -110,6 +112,7 @@ extend: 'Ext.grid.Grid',
                         change: function(){
                             caris = Ext.getCmp('namacarilaporan').getValue();
                             Ext.getStore('lislaporankeluar').filter('nama_barang' , caris);
+                            Ext.getCmp('ext-gridcolumn-46').setText('Nama Barang ' + '<b>( Total : ' + Ext.getStore('lislaporankeluar').count() + ' )</b>');
                         }
                     }   
                 },
@@ -121,7 +124,8 @@ extend: 'Ext.grid.Grid',
                  xtype: 'button', 
                  //ui: 'action',          
                     iconCls: 'x-fa fa-floppy-o',
-                    text: 'Save'
+                    text: 'Save',
+                    handler: 'printkeluar'
                     
                 
                 }/*,

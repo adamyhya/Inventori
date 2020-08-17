@@ -38,6 +38,7 @@ extend: 'Ext.grid.Grid',
                         Ext.getStore('liskeluar').remove(cell);
                         Ext.getStore('liskeluar').load();
                         Ext.getStore('lisbarang').load();
+                        Ext.getCmp('ext-gridcolumn-22').setText('Nama Barang ' + '<b>( Total : ' + Ext.getStore('liskeluar').count() + ' )</b>');
                     }
                 }
 
@@ -59,6 +60,9 @@ extend: 'Ext.grid.Grid',
                         change: function(){
                             caris = Ext.getCmp('namacari2').getValue();
                             Ext.getStore('liskeluar').filter('nama_barang' , caris);
+                           Ext.getCmp('ext-gridcolumn-22').setText('Nama Barang ' + '<b>( Total : ' + Ext.getStore('liskeluar').count() + ' )</b>');
+                           // membaca id id componen yg benar
+                            //console.log(Ext.ComponentQuery.query("keluarlist")[0].getColumns());
                         }
                     }   
                 },

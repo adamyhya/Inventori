@@ -5,7 +5,7 @@ Ext.define('Inventori.store.Liskategori', {
     autoLoad: true,
     autoSync: true,
     fields: [
-        'nomor', 'id_kategori', 'nama_kategori'
+        'nomor', 'id_kategori', 'nama_kategori', 'old_nama_kategori'
     ],
 
 

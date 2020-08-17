@@ -21,7 +21,7 @@ extend: 'Ext.grid.Grid',
         { text: 'Jurusan', dataIndex: 'nama_jurusan', width: 120 },
         { text: 'Keterangan', dataIndex: 'keterangan', width: 230 },
         { text: 'Admin', dataIndex: 'nama_user', width: 120 },
-        { text: 'Hapus',
+        /*{ text: 'Hapus',
             width: 100,
             ignoreExport: true,
             cell: {
@@ -33,14 +33,16 @@ extend: 'Ext.grid.Grid',
                     handler: function(btn) {
                         record = btn.getParent();
                         cell = record.getRecord();
-                        Ext.getStore('lismasuk').remove(cell);
-                        Ext.getStore('lismasuk').load();
+                        console.log(Ext.getStore('lislaporanmasuk').remove(cell)); //error
+                        Ext.getStore('lislaporanmasuk').load();
                         Ext.getStore('lisbarang').load();
+                        Ext.getCmp('tahun1').setValue(Ext.getCmp('tahun1').getValue());
+                        Ext.getCmp('ext-gridcolumn-34').setText('Nama Barang ' + '<b>( Total : ' + Ext.getStore('lislaporanmasuk').count() + ' )</b>');
                     }
                 }
 
                  }
-        }
+        }*/
     ],
 
     items: [
@@ -68,6 +70,7 @@ extend: 'Ext.grid.Grid',
                             store1 = Ext.getStore('lislaporanmasuk');
                             store1.proxy.extraParams = { tgl : thn };
                             store1.load();
+                            Ext.getCmp('ext-gridcolumn-34').setText('Nama Barang');
                         }
                     }   
                 },
@@ -91,6 +94,7 @@ extend: 'Ext.grid.Grid',
                                 anyMatch: true,
                                 caseSensitive: false
                             });
+                            Ext.getCmp('ext-gridcolumn-34').setText('Nama Barang');
                         }
                     }   
                 }
@@ -111,6 +115,7 @@ extend: 'Ext.grid.Grid',
                         change: function(){
                             caris = Ext.getCmp('namacarilaporan1').getValue();
                             Ext.getStore('lislaporanmasuk').filter('nama_barang' , caris);
+                            Ext.getCmp('ext-gridcolumn-34').setText('Nama Barang ' + '<b>( Total : ' + Ext.getStore('lislaporanmasuk').count() + ' )</b>');
                         }
                     }   
                 },
@@ -122,7 +127,8 @@ extend: 'Ext.grid.Grid',
                  xtype: 'button', 
                  //ui: 'action',          
                     iconCls: 'x-fa fa-floppy-o',
-                    text: 'Save'
+                    text: 'Save',
+                    handler: 'printmasuk'
                     
                 
                 }/*,

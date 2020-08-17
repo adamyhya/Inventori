@@ -79,8 +79,8 @@ extend: 'Ext.grid.Grid',
                             easing: 'ease-out'
                         },
                         centered: true,
-                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 600,
-                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 600,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 260,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 230,
                         styleHtmlContent: true,
                         scrollable: true
                     });
@@ -114,8 +114,8 @@ extend: 'Ext.grid.Grid',
                             easing: 'ease-out'
                         },
                         centered: true,
-                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 340,
-                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 430,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 260,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 230,
                         styleHtmlContent: true,
                         scrollable: true
                     });
@@ -124,6 +124,8 @@ extend: 'Ext.grid.Grid',
                 record = Ext.getCmp('lsatuan').getSelection();  
                 Ext.getCmp('id_satuane').setValue(record.data.id_satuan);
                 Ext.getCmp('nama_satuane').setValue(record.data.nama_satuan);
+                Ext.getCmp('old_namas').setValue(record.data.nama_satuan);
+                
                 }
             }
             ]

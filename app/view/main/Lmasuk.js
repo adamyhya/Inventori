@@ -37,6 +37,7 @@ alias: 'view.lmasuk',
                         Ext.getStore('lismasuk').remove(cell);
                         Ext.getStore('lismasuk').load();
                         Ext.getStore('lisbarang').load();
+                        Ext.getCmp('ext-gridcolumn-10').setText('Nama Barang ' + '<b>( Total : ' + Ext.getStore('lismasuk').count() + ' )</b>');
                     }
                 }
 
@@ -58,6 +59,7 @@ alias: 'view.lmasuk',
                         change: function(){
                             caris = Ext.getCmp('namacari1').getValue();
                             Ext.getStore('lismasuk').filter('nama_barang' , caris);
+                            Ext.getCmp('ext-gridcolumn-10').setText('Nama Barang ' + '<b>( Total : ' + Ext.getStore('lismasuk').count() + ' )</b>');
                         }
                     }   
                 },

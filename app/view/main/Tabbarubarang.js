@@ -34,6 +34,7 @@ Ext.define('Inventori.view.main.Tabbarubarang', {
             items: [{
                 id: 'lmasuk',
                xtype: 'masuklist'
+
              }],
             cls: 'card'
         },

@@ -85,8 +85,8 @@ extend: 'Ext.grid.Grid',
                             easing: 'ease-out'
                         },
                         centered: true,
-                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 600,
-                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 400 : 600,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 300 : 300,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 440 : 440,
                         styleHtmlContent: true,
                         scrollable: true
                     });
@@ -120,8 +120,8 @@ extend: 'Ext.grid.Grid',
                             easing: 'ease-out'
                         },
                         centered: true,
-                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 340,
-                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 430,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 300 : 340,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 440 : 440,
                         styleHtmlContent: true,
                         scrollable: true
                     });

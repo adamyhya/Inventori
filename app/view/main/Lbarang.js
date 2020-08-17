@@ -34,6 +34,7 @@ alias: 'view.lbarang',
                         cell = record.getRecord();
                         Ext.getStore('lisbarang').remove(cell);
                         Ext.getStore('lisbarang').load();
+                        Ext.getCmp('ext-gridcolumn-3').setText('Nama Barang ' + '<b>( Total : ' + Ext.getStore('lisbarang').count() + ' )</b>');
                     }
                 }
 
@@ -55,6 +56,8 @@ alias: 'view.lbarang',
                         change: function(){
                             caris = Ext.getCmp('namacari').getValue();
                             Ext.getStore('lisbarang').filter('nama_barang' , caris);
+                            Ext.getCmp('ext-gridcolumn-3').setText('Nama Barang ' + '<b>( Total : ' + Ext.getStore('lisbarang').count() + ' )</b>');
+                            
                         }
                     }   
                 },
@@ -128,8 +131,10 @@ alias: 'view.lbarang',
                 record = Ext.getCmp('lbarang').getSelection();
                 Ext.getCmp('idbar').setValue(record.data.id_barang);
                 Ext.getCmp('namaeb').setValue(record.data.nama_barang);
+                Ext.getCmp('oldnamaeb').setValue(record.data.nama_barang);
                 Ext.getCmp('namaekat').setValue(record.data.nama_kategori);
                 Ext.getCmp('jumlaheb').setValue(record.data.jumlah_barang);
+                Ext.getCmp('oldjumlaheb').setValue(record.data.jumlah_barang);
                 Ext.getCmp('namaes').setValue(record.data.nama_satuan);
                 }
 

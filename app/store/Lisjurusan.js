@@ -5,7 +5,7 @@ Ext.define('Inventori.store.Lisjurusan', {
     autoLoad: true,
     autoSync: true,
     fields: [
-        'nomor', 'id_jurusan', 'nama_jurusan'
+        'nomor', 'id_jurusan', 'nama_jurusan', 'old_nama_jurusan'
     ],
     proxy: {
         type: 'jsonp',

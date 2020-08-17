@@ -9,6 +9,7 @@ Ext.define('Inventori.store.Lislaporanmasuk', {
         type: 'jsonp',
         api: {
             read: "http://localhost/inventaris/apilaporan.php?action=4",
+            destroy: "http://localhost/inventaris/apilaporan.php?action=7",
         },
         reader: {
             type: 'json',

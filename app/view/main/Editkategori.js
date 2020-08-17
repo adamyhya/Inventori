@@ -47,6 +47,12 @@ Ext.define('Inventori.view.main.barang.Editkategori', {
                 },
                 {
                     xtype: 'textfield',
+                    id: 'old_nama_kategori',
+                    name: 'old_nama_kategori',
+                    hidden: true     
+                },
+                {
+                    xtype: 'textfield',
                     id: 'nama_kategorie',
                     name: 'nama_kategorie',
                     label: 'Nama Kategori',

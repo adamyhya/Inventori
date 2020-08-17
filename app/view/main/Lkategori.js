@@ -79,8 +79,8 @@ extend: 'Ext.grid.Grid',
                             easing: 'ease-out'
                         },
                         centered: true,
-                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 600,
-                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 600,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 260,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 230,
                         styleHtmlContent: true,
                         scrollable: true
                     });
@@ -114,8 +114,8 @@ extend: 'Ext.grid.Grid',
                             easing: 'ease-out'
                         },
                         centered: true,
-                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 340,
-                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 430,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 260,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 230,
                         styleHtmlContent: true,
                         scrollable: true
                     });
@@ -124,6 +124,7 @@ extend: 'Ext.grid.Grid',
                 record = Ext.getCmp('lkategori').getSelection();  
                 Ext.getCmp('id_kategorie').setValue(record.data.id_kategori);
                 Ext.getCmp('nama_kategorie').setValue(record.data.nama_kategori);
+                Ext.getCmp('old_nama_kategori').setValue(record.data.nama_kategori);
                 }
             }
 

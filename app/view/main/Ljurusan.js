@@ -79,8 +79,8 @@ alias: 'view.ljurusan',
                             easing: 'ease-out'
                         },
                         centered: true,
-                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 600,
-                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 600,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 260,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 220,
                         styleHtmlContent: true,
                         scrollable: true
                     });
@@ -114,8 +114,8 @@ alias: 'view.ljurusan',
                             easing: 'ease-out'
                         },
                         centered: true,
-                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 340,
-                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 430,
+                        width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 260,
+                        maxHeight: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 220 : 230,
                         styleHtmlContent: true,
                         scrollable: true
                     });
@@ -124,6 +124,7 @@ alias: 'view.ljurusan',
                 record = Ext.getCmp('ljurusan').getSelection();  
                 Ext.getCmp('id_jurusane').setValue(record.data.id_jurusan);
                 Ext.getCmp('nama_jurusane').setValue(record.data.nama_jurusan);
+                Ext.getCmp('old_namaj').setValue(record.data.nama_jurusan);
                 }
             }
 
