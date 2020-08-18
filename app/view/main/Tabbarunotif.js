@@ -1,9 +1,9 @@
 /**
  * Demonstrates a very simple tab panel with 3 tabs
  */
-Ext.define('Inventori.view.main.Tabbarusett', {
+Ext.define('Inventori.view.main.Tabbarunotif', {
     extend: 'Ext.tab.Panel',
-    xtype: 'tabbarusett',
+    xtype: 'tabbarunotif',
     
     shadow: true,
     cls: 'demo-solid-background',
@@ -18,21 +18,22 @@ Ext.define('Inventori.view.main.Tabbarusett', {
     },
     items: [
         {
-            title: 'Pengguna',
-            iconCls: 'x-fa fa-users',
+            title: 'Log Aktifitas',
+            iconCls: 'x-fa fa-bell-o',
             layout: 'fit',
             items: [{
-                id: 'luser',
-               xtype: 'userlist'
+                id: 'laktifitas',
+               xtype: 'laktifitas'
              }],
             cls: 'card'
         },
         {
-            title: 'Setting',
-            iconCls: 'x-fa fa-cogs',
+            title: 'Pemberitahuan',
+            iconCls: 'x-fa fa-bell',
             layout: 'fit',
             items: [{
-               xtype: 'tabbarusett2'
+               id: 'lnotif',
+               xtype: 'lnotif'
              }],
             cls: 'card'
         }

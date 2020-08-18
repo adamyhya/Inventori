@@ -5,7 +5,7 @@ Ext.define('Inventori.store.Liskategori', {
     autoLoad: true,
     autoSync: true,
     fields: [
-        'nomor', 'id_kategori', 'nama_kategori', 'old_nama_kategori'
+        'nomor', 'id_kategori', 'nama_kategori', 'old_nama_kategori', 'id_user'
     ],
 
 
@@ -16,6 +16,9 @@ Ext.define('Inventori.store.Liskategori', {
             create: "http://localhost/inventaris/apikategori.php?action=2",
             destroy: "http://localhost/inventaris/apikategori.php?action=3",
             update: "http://localhost/inventaris/apikategori.php?action=4",             
+        },
+        extraParams: {
+        iduser : localStorage.getItem('id_user')
         },
         reader: {
             type: 'json',

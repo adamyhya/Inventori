@@ -5,7 +5,7 @@ Ext.define('Inventori.store.Lisjurusan', {
     autoLoad: true,
     autoSync: true,
     fields: [
-        'nomor', 'id_jurusan', 'nama_jurusan', 'old_nama_jurusan'
+        'nomor', 'id_jurusan', 'nama_jurusan', 'old_nama_jurusan', 'id_user'
     ],
     proxy: {
         type: 'jsonp',
@@ -14,6 +14,9 @@ Ext.define('Inventori.store.Lisjurusan', {
             create: "http://localhost/inventaris/apijurusan.php?action=2",
             destroy: "http://localhost/inventaris/apijurusan.php?action=3",
             update: "http://localhost/inventaris/apijurusan.php?action=4",            
+        },
+        extraParams: {
+        iduser : localStorage.getItem('id_user')
         },
         reader: {
             type: 'json',

@@ -34,6 +34,8 @@ alias: 'view.lbarang',
                         cell = record.getRecord();
                         Ext.getStore('lisbarang').remove(cell);
                         Ext.getStore('lisbarang').load();
+                        Ext.getStore('lisbarang1').load();
+                        Ext.getStore('lisbarang2').load();
                         Ext.getCmp('ext-gridcolumn-3').setText('Nama Barang ' + '<b>( Total : ' + Ext.getStore('lisbarang').count() + ' )</b>');
                     }
                 }
@@ -67,6 +69,7 @@ alias: 'view.lbarang',
                 {
                     xtype: 'button',
                     iconCls: 'x-fa fa-plus',
+                    id: 'btnaddbrg',
                     name: 'butadd',
                     handler: function() {
                     if (!this.overlay) {

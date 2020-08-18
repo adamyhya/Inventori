@@ -60,6 +60,7 @@ extend: 'Ext.grid.Grid',
                 {
                     xtype: 'button',
                     iconCls: 'x-fa fa-plus',
+                    id: 'btnaddktg',
                     name: 'butadd',
                     handler: function() {
                     if (!this.overlay) {

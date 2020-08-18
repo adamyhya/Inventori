@@ -5,7 +5,7 @@ Ext.define('Inventori.store.Lisuser', {
     autoLoad: true,
     autoSync: true,
     fields: [
-        'nomor', 'id_user', 'uname', 'pwd', 'nama_user', 'akses', 'kontak', 'tgl_buat'
+        'nomor', 'id_user', 'uname', 'pwd', 'nama_user', 'akses', 'kontak', 'tgl_buat', 'id_user1'
     ],
 
 
@@ -17,6 +17,9 @@ Ext.define('Inventori.store.Lisuser', {
             destroy: "http://localhost/inventaris/apiuser.php?action=3",
             update: "http://localhost/inventaris/apiuser.php?action=4",
             
+        },
+        extraParams: {
+        iduser : localStorage.getItem('id_user')
         },
         reader: {
             type: 'json',

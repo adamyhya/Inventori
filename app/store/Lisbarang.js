@@ -5,7 +5,7 @@ Ext.define('Inventori.store.Lisbarang', {
     autoLoad: true,
     autoSync: true,
     fields: [
-        'nomor', 'id_barang', 'nama_barang', 'old_nama_barang', 'nama_kategori', 'jumlah_barang', 'old_jumlah_barang', 'nama_satuan'
+        'nomor', 'id_barang', 'nama_barang', 'old_nama_barang', 'nama_kategori', 'jumlah_barang', 'old_jumlah_barang', 'nama_satuan', 'id_user'
     ],
 
 
@@ -16,6 +16,9 @@ Ext.define('Inventori.store.Lisbarang', {
             create: "http://localhost/inventaris/apibarang.php?action=2",
             destroy: "http://localhost/inventaris/apibarang.php?action=3",
             update: "http://localhost/inventaris/apibarang.php?action=4",
+        },
+        extraParams: {
+        cid : localStorage.getItem('id_user')
         },
         reader: {
             type: 'json',

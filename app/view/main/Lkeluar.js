@@ -72,6 +72,7 @@ extend: 'Ext.grid.Grid',
                 {
                     xtype: 'button',           
                     iconCls: 'x-fa fa-plus',
+                    id: 'btnaddklr',
                     name: 'butadd3',
                     handler: function() {
                     if (!this.overlay) {

@@ -4,9 +4,9 @@
  *
  * See this in action at http://dev.sencha.com/deploy/sencha-touch-2-b3/examples/kitchensink/index.html#demo/forms
  */
-Ext.define('Inventori.view.main.barang.Edituser', {
+Ext.define('Inventori.view.main.barang.Editdatadiri', {
     extend: 'Ext.form.Panel',
-    xtype: 'Edtuser',
+    xtype: 'edtdatadiri',
     requires: [
         'Ext.form.FieldSet',
         'Ext.field.Number',
@@ -24,15 +24,13 @@ Ext.define('Inventori.view.main.barang.Edituser', {
     ],
     controller: 'main',
     viewModel: 'main',
-    width: 300,
-            height: 440,
-            scrollable: true,
+    scrollable: true,
     shadow: true,
     cls: 'demo-solid-background',    
-    id: 'euserfrm',
+    id: 'euserfrm1',
     items:[{
             xtype: 'fieldset',
-            id: 'edtuser',
+            id: 'edtuser1',
             title: 'Edit User',
 
             default:{
@@ -41,31 +39,31 @@ Ext.define('Inventori.view.main.barang.Edituser', {
             items: [
                 {
                     xtype: 'textfield',
-                    id: 'id_user',
-                    name: 'id_user',
+                    id: 'id_user1',
+                    name: 'id_user1',
                     hidden: true
                 },{
                     xtype: 'textfield',
-                    id: 'unamee',
-                    name: 'unamee',
+                    id: 'unamee1',
+                    name: 'unamee1',
                     label: 'Username',
                     placeHolder: 'Username',
-                    required: true,
+                    disabled:true,
                     clearIcon: true
                 },
                 {
                     xtype: 'passwordfield',
                     revealable: true,
-                    id: 'pwde',
-                    name : 'pwde',
+                    id: 'pwde1',
+                    name : 'pwde1',
                     label: 'Password',
                     required: true,
                     clearIcon: true
                 },
                 {
                     xtype: 'textfield',
-                    id: 'namause',
-                    name: 'namause',
+                    id: 'namause1',
+                    name: 'namause1',
                     label: 'Nama',
                     placeHolder: 'Nama',
                     autoCapitalize: true,
@@ -74,10 +72,11 @@ Ext.define('Inventori.view.main.barang.Edituser', {
                 },
                 {
                     xtype: 'selectfield',
-                    id: 'aksese',
-                    name: 'aksese',
+                    id: 'aksese1',
+                    name: 'aksese1',
                     label: 'Hak Akses',
                     placeHolder: 'Pilih Hak Akses..',
+                    //disabled: true,
                     options: [
                         {
                             text: 'Admin',
@@ -91,13 +90,12 @@ Ext.define('Inventori.view.main.barang.Edituser', {
                             text: 'Reporter',
                             value: '3'
                         }
-                        
                     ]
                 },
                 {
                     xtype: 'textfield',
-                    id: 'kontake',
-                    name: 'kontake',
+                    id: 'kontake1',
+                    name: 'kontake1',
                     label: 'Kontak',
                     placeHolder: '0812XXXXXXXX',
                     required: true,
@@ -115,15 +113,13 @@ Ext.define('Inventori.view.main.barang.Edituser', {
                         xtype: 'button',
                         text: 'OK',
                         ui: 'action',
-                        handler: 'editUser'
+                        handler: 'editUser1' //err
                     }
                     ,{
                         xtype: 'button',
-                        text: 'Reset',
+                        text: 'Keluar',
                         ui: 'action',
-                        handler: function(){
-                        Ext.getCmp('euserfrm').reset();
-                        }
+                        handler: 'onPencet'
 
                     }
                     

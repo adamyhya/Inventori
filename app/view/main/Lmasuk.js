@@ -37,7 +37,7 @@ alias: 'view.lmasuk',
                         Ext.getStore('lismasuk').remove(cell);
                         Ext.getStore('lismasuk').load();
                         Ext.getStore('lisbarang').load();
-                        Ext.getCmp('ext-gridcolumn-10').setText('Nama Barang ' + '<b>( Total : ' + Ext.getStore('lismasuk').count() + ' )</b>');
+                        Ext.getCmp('ext-gridcolumn-11').setText('Nama Barang ' + '<b>( Total : ' + Ext.getStore('lismasuk').count() + ' )</b>');
                     }
                 }
 
@@ -71,6 +71,7 @@ alias: 'view.lmasuk',
                     
                     iconCls: 'x-fa fa-plus',
                     text: '',
+                    id: 'btnaddmsk',
                     name: 'butadd1',
                     handler: function() {
                     if (!this.overlay) {

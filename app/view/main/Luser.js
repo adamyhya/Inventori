@@ -67,6 +67,7 @@ extend: 'Ext.grid.Grid',
                     
                     iconCls: 'x-fa fa-plus',
                     name: 'butadd',
+                    id: 'buttonadd',
                     handler: function() {
                 if (!this.overlay) {
                     this.overlay = Ext.Viewport.add({

@@ -53,6 +53,7 @@ Ext.define('Inventori.view.main.login.Login', {
             items: [
                 {
                     xtype: 'textfield',
+                    id: 'uname',
                     name: 'uname',
                     label: 'Username',
                     placeHolder: 'Username',
@@ -62,7 +63,8 @@ Ext.define('Inventori.view.main.login.Login', {
                 {
                     xtype: 'passwordfield',
                     revealable: true,
-                    name : 'password',
+                    id: 'pwd',
+                    name : 'pwd',
                     label: 'Password',
                     required: true,
                     clearIcon: true
@@ -76,11 +78,7 @@ Ext.define('Inventori.view.main.login.Login', {
                         xtype: 'button',
                         text: 'Login',
                         ui: 'action',
-                        scope: this,
-                        listeners:{
-                            tap: 'onLoginClick'
-                        }
-
+                        handler: 'logins'
                     }
                     ]
                 }

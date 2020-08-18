@@ -80,6 +80,10 @@ Ext.define('Inventori.view.main.addUser', {
                         {
                             text: 'Staff',
                             value: '2'
+                        },
+                        {
+                            text: 'Reporter',
+                            value: '3'
                         }
                         
                     ]

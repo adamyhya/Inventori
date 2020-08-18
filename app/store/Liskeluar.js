@@ -5,7 +5,7 @@ Ext.define('Inventori.store.Liskeluar', {
     autoLoad: true,
     autoSync: true,
     fields: [
-        'nomor', 'jumlah_barang', 'id_barang', 'id_brg_keluar', 'nama_barang', 'nama_kategori', 'jumlah_barang_keluar', 'nama_satuan', 'tgl_keluar', 'nama_jurusan', 'nama_user', 'keterangan'
+        'nomor', 'jumlah_barang', 'id_barang', 'id_brg_keluar', 'nama_barang', 'nama_kategori', 'jumlah_barang_keluar', 'nama_satuan', 'tgl_keluar', 'nama_jurusan', 'nama_user', 'keterangan', 'id_user'
     ],
 
 
@@ -16,6 +16,9 @@ Ext.define('Inventori.store.Liskeluar', {
             create: "http://localhost/inventaris/apikeluar.php?action=2",
             destroy: "http://localhost/inventaris/apikeluar.php?action=3",
             update: "http://localhost/inventaris/apikeluar.php?action=4",
+        },
+        extraParams: {
+        iduser : localStorage.getItem('id_user')
         },
         reader: {
             type: 'json',

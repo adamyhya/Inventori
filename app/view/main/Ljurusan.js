@@ -60,6 +60,7 @@ alias: 'view.ljurusan',
                 {
                     xtype: 'button',
                     iconCls: 'x-fa fa-plus',
+                    id:'btnaddjrs',
                     name: 'butadd6',
                     handler: function() {
                 if (!this.overlay) {
